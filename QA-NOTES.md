@@ -1,42 +1,29 @@
 # Website verification
 
-Verified on November 15, 2026, in Chromium using the local website preview.
+## November 2026 project-package update
 
-## Passed
+Verified November 15, 2026 using local Chromium browser emulation. The site remains plain HTML/CSS/JavaScript, with no build or dependency installation.
 
-- Desktop rendering with the supplied logo, locally loaded fonts, hero image, and project photography.
-- Phone layouts in 320px and 390px iframe viewports and a tablet layout in a 768px iframe viewport. These are real CSS viewport checks, not physical-device tests.
-- No horizontal page overflow at the checked phone and tablet widths, including the Spanish translation.
-- English/Spanish switching, with the selected project type preserved.
-- Residential/commercial tab switching and corresponding inquiry-interest selection.
-- Mobile navigation opens, follows its project link, and closes.
-- The development accordion opens the selected step and closes the previous step; FAQ answers expand.
-- The privacy dialog opens and closes with Escape. No application console errors were observed.
-- Project details dialog includes the supplied facts and the project-partnership placeholder.
-- Original invitation opens in a native dialog and has a download link.
-- Calendar button produces a downloadable `.ics` file for the announced event.
-- The downloaded calendar contains `DTSTART:20261202T163000Z`, equivalent to 10:30 AM in Donna, and no invented ceremony end time.
-- Required contact fields and local inquiry preview work. A test visitor's commercial-lot choice is preserved in the draft.
-- Copy and downloadable-text actions work in the served preview. No inquiry is sent during this flow.
-- Local asset references and in-page anchors resolve; IDs are unique.
-- HTML, CSS, JavaScript, the hero image, and local fonts load successfully in the browser preview.
-- JavaScript syntax checks pass for `app.js` and `content.js`.
+### Passed
 
-## Still to confirm with the company
+- All four pages (`index.html`, `available-lots.html`, `invest.html`, `careers.html`) in English and Spanish at 320, 390, 768, 1024, and 1440px: no horizontal page overflow or browser exceptions.
+- Exact PDF gold `#C9A24A`, supplied aerial/proposed-plan images, portraits, partner logos, and the downloadable original eight-page PDF load correctly.
+- Countdown includes seconds, updates once per second, and hides the countdown/calendar action after the announced event; no negative values.
+- Company email is `contact@interdecgroup.com`; company phone is `+52 81 1414 5035`. Project sales contacts remain separately labeled.
+- Residential/commercial project tabs and their translated sizes/pricing work. Homepage inquiry previews, text downloads, calendar downloads, dialogs, and email-app handoff work. Calendar retains `DTSTART:20261202T163000Z` with no invented end time.
+- Available Lots contains all 52 records. Filters return 43 available total, 40 available residential, 9 reserved residential, and 3 commercial. Lot search, no-results state, reset, exceptions, proposed-plan view, keyboard details, and lot-specific email drafts work.
+- Inventory identifies lots 18–26 as reserved in the November 2026 package. Detailed records preserve differences between the inventory table's typical dimensions and certain site-plan area annotations.
+- Invest preserves the published launch limits, cash matching, $1,000 deposit, 12-month term, dated payment example, eight $1,250 installments, final balance, and early-sale payoff requirement. Planned delivery and target home pricing are labeled as package projections/concepts.
+- Careers contains a general-interest inquiry form without invented vacancies. Careers and Invest validate inputs, prepare local previews, download text, and address email-app drafts to the company inbox. No test message was sent.
+- Cross-page language persistence, mobile navigation, native dialogs, Escape closing, keyboard tabs, and reduced-motion behavior pass.
+- Root and `/INTERDEC/` subdirectory serving both work; local links, assets, anchors, and unique HTML IDs were checked. No failed HTTP asset requests were observed.
+- No-JavaScript visitors can read the pages and all 52 lot records; dynamic filters, translation controls, and draft previews require JavaScript. Form submit buttons remain disabled until their scripts load.
+- JavaScript syntax and `git diff --check` pass.
 
-Company contact details, company story, precise project role and partners, approved photography, lot dimensions and prices, sales availability, the event entrance, and the final privacy text.
+### Limits and remaining company content
 
-The live GoDaddy domain, final hosting provider, external email delivery, and a physical mobile device have not been tested. The default inquiry form deliberately prepares a local draft. It requires a configured real email address to offer the visitor an email-app handoff; server-side form delivery is a later integration.
+Inventory and pricing are a November 2026 snapshot, not a live booking system. Confirm current lot status, final plat dimensions, launch eligibility, and contract terms with the project sales team. The supplied aerials contain proposed lot overlays and do not show completed construction.
 
-## Architectural style update — November 15, 2026
+Company history, office address, specific career openings, and final privacy policy remain unprovided. Forms prepare local drafts and open the visitor's email application; automatic form delivery and mailbox receipt have not been tested or implemented.
 
-Additional Chromium checks after adding `design.css`, `effects.js`, and decorative markup:
-
-- English and Spanish at 320, 390, 700, 768, 900, 1024, 1280, 1440, and 1920px: no horizontal page overflow or hero-control/project-card collisions. The English headline was refined to stay on one line per phrase at 320px.
-- Floating navigation, keyboard-operated project tabs, project/invitation dialogs, Escape closing, mobile navigation, language persistence, inquiry preview, and inquiry text download passed.
-- Calendar downloads in both languages retain `DTSTART:20261202T163000Z`, with no invented end time. Process accordion and FAQ interactions passed.
-- Pointer lighting, subtle button movement, image tilt, and scroll-linked typography passed. Pointer effects are disabled on touch/mobile; reduced-motion settings disable effects and immediately show content, including when the setting changes while the page is open.
-- The site and new assets load under the `/INTERDEC/` repository subpath. No JavaScript exceptions or failed asset requests were observed in these checks. JavaScript syntax checks passed.
-- Reading content and the no-script notice remain available with JavaScript disabled. With only the optional enhancement script unavailable, the application retains its existing controls.
-
-These checks used local Chromium browser emulation, not physical devices or other browser engines. The updated files have not been deployed to GitHub Pages or final hosting as part of this style update. No company/project facts or image assets changed.
+Checks used Chromium emulation, not physical devices or other browser engines. Direct access to the live GitHub Pages URL is blocked by this environment's network policy; deployment status is checked through GitHub Actions. GoDaddy DNS and final hosting have not been changed.

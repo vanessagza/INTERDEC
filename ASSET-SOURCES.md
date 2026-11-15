@@ -1,36 +1,74 @@
 # Asset and content sources
 
-## Company-supplied material
+## Company-supplied information
 
-- `assets/images/interdec-logo.jpg`: original INTERDEC Developers logo supplied in this conversation (`photo_2026-11-15_17-47-08.jpg`). The supplied image is preserved; its presentation on the page uses CSS.
-- `assets/images/puerta-del-sol-groundbreaking.jpg`: original Puerta del Sol ceremony poster supplied in this conversation (`photo_2026-11-15_17-51-16.jpg`). The original invitation is included for viewing and download.
-- Legal name, business activities, Texas location, short name, and intended domain: supplied by Vanessa in the website brief.
-- Project counts, ceremony date/time, event location, refreshments, project inquiry phone, and poster credits: transcribed from the supplied invitation.
+Vanessa supplied INTERDEC's short name, legal name **INTERNATIONAL TERRA DEVELOPING CORP, LLC**, Texas business activities, intended domain `interdecgroup.com`, company email **contact@interdecgroup.com**, and company phone **+52 81 1414 5035**.
 
-## Illustrative imagery
+Company history, office address, ownership percentages, job vacancies, employment terms, and investment returns have not been supplied and must not be invented.
 
-- `assets/images/hero-land.webp`: generated specifically for this website with the built-in image generator. It depicts an imagined flat South Texas landscape and a new road at golden hour. It is not an actual photograph, rendering, site plan, or representation of Puerta del Sol's condition, infrastructure, amenities, or design. The page labels it as concept imagery. It was converted to WebP for delivery.
-- `assets/images/neighborhood.jpg`: representative Unsplash photograph, locally downloaded from https://images.unsplash.com/photo-1592595896551-12b371d546d5?auto=format&fit=crop&w=2000&q=85 . It is not Puerta del Sol. The project image and footer identify it as illustrative. Unsplash's license is at https://unsplash.com/license . Replace it with authorized project photography when available.
+## Original invitation and financing flyer
 
-### Hero generation prompt
+- `assets/images/interdec-logo.jpg`: original INTERDEC Developers logo supplied in the initial brief (`photo_2026-11-15_17-47-08.jpg`).
+- `assets/images/puerta-del-sol-groundbreaking.jpg`: original company-supplied ceremony invitation (`photo_2026-11-15_17-51-16.jpg`), retained for viewing and download.
+- The subsequently supplied financing flyer provides launch prices, the matching lot-financing offer, deposit/payment summary, planned April–May 2027 delivery, lot-size summary, and Frank/Yahir sales contacts. It credits AVIG Development and shows Allen Lozano BIG Realty and INTERDEC. The flyer was supplied as a conversation image; a separate flyer file is not included in this repository.
 
-Built-in generation, photorealistic-natural: a premium wide drone view of flat South Texas land at warm early evening, open golden grass lots in the foreground, a new paved road curving from the lower right toward the horizon, green agricultural fields, low native trees, and a distant low-rise neighborhood; realistic architectural aerial photography, no mountains, no lakes, no tall buildings, no signs, text, logos, lot boundaries, or numbers. Darker natural grass on the left for a white headline. Explicitly illustrative concept photography, not a record of a particular property.
+## November 2026 lot and builder package
+
+`assets/documents/puerta-del-sol-lot-package-nov-2026.pdf` is the original eight-page **Puerta del Sol — Lot & Builder Package, November 2026** supplied by Vanessa. Its internal title is “Puerta del Sol Lot Package.” It is offered unchanged as a visitor download.
+
+The following assets were extracted from embedded PDF images without generative modification. Separate embedded alpha masks were restored for transparent PNG logos. Assets remain at their supplied embedded resolution; CSS controls presentation.
+
+| Asset in `assets/images/package/` | PDF source and interpretation |
+| --- | --- |
+| `puerta-del-sol-aerial-plan.jpeg` | Page 2; supplied aerial with a proposed subdivision/lot-plan overlay. Used for the home hero and featured project. Not proof of completed streets, construction, recording, or final parcel dimensions. |
+| `nearby-retail-aerial.jpeg` | Page 3; nearby retail corridor. Shopping-center “available” labels refer to that retail illustration, not Puerta del Sol lots. |
+| `puerta-del-sol-site-plan.jpeg` | Page 4; supplied proposed site plan over an aerial. Preserve the distinction between a proposed plan and a recorded final plat. |
+| `allen-lozano.jpeg` | Page 8; supplied portrait of Allen Lozano. |
+| `francisco-velasco.jpeg` | Page 8; supplied portrait of Francisco Velasco, called Frank in the sales contacts. |
+| `yahir-galvan.jpeg` | Page 8; supplied portrait of Yahir Galvan. |
+| `avig-development-logo.jpeg` | Page 8; AVIG Development logo, credited as developer. |
+| `allen-lozano-big-realty-logo.jpeg` | Pages 7–8; Allen Lozano BIG Realty logo. |
+| `interdec-white-logo.png` | Page 1; white INTERDEC logo with embedded transparency. |
+| `interdec-logo.png` | Pages 7–8; INTERDEC logo with embedded transparency. |
+| `top-texas-title-logo.png` | Page 7; Top Texas Title sponsor logo. |
+| `freedom-bank-logo.png` | Page 7; Freedom Bank sponsor logo. |
+| `gfs-home-loans-logo.png` | Page 7; GFS Home Loans sponsor logo. |
+| `city-of-donna-logo.png` | Page 7; City of Donna sponsor logo. |
+
+The primary gold **`#C9A24A`** was read directly from the PDF's text colors and vector fills. The package also uses dark navy `#0C1B29`.
+
+### Facts attributed to the package
+
+- **Pages 1–2:** 49 residential lots and 3 commercial lots in Donna, Hidalgo County; typical 42.5′ × 129.5′ residential lot, approximately 5,504 sq ft; proposed 1,250 sq ft, 3-bedroom/2-bath home targeting a finished sale price near $205,000. The home and resale price are planning targets, not a completed-home offer or guarantee.
+- **Page 3:** Salinas Blvd & Mile 10 N Rd, Donna, TX 78537; Donna ISD and Salazar Elementary; access to I-2/US 83. The package lists Walmart Supercenter, Chick-fil-A, Whataburger, Dutch Bros Coffee, Burlington, Ross Dress for Less, AutoZone, ULTA Beauty, and PetSmart within 1.4 miles. These proximity claims are attributed to the package, not independently measured.
+- **Pages 4–5:** November 2026 inventory: lots 18–26 reserved, 40 of 49 residential lots available, and commercial lots 50–52 available. Commercial areas are 16,150, 11,702, and 16,796 sq ft. Table exceptions are residential lots 18 (8,117 sq ft), 19 (8,638 sq ft), and 29 (6,940 sq ft).
+- **Page 6:** $55,000 USD cash and $57,000 USD financed launch pricing under first-10-lot conditions; prices reviewed after the first 10 cash lots sell; matching financed lots starting with two cash purchases, capped at 15 financed lots; planned finished/recorded delivery April–May 2027. Example schedule: $1,000 deposit, May–July 2027 with no payments, August 2027–March 2028 eight payments of $1,250, and final balance April 10, 2028, assuming April 10, 2027 delivery. Early home-sale closing requires payoff. Financing/closing partners are GFS Home Loans (Jason De Leon), Freedom Bank, and Top Texas Title. No APR is supplied.
+- **Page 7:** Wednesday, December 2, 2026, 10:30 AM groundbreaking ceremony, food and drinks, and RSVP by texting Frank. Sponsor logos are retained as credited project material, without claiming company ownership or an exclusive relationship.
+- **Page 8:** Allen Lozano, REALTOR®, (956) 246-2563; Francisco Velasco, REALTOR®, (956) 456-1788; Yahir Galvan, REALTOR®, (956) 739-8260. AVIG Development is credited as developer; Allen Lozano BIG Realty and INTERDEC are credited with bringing the project together. These are project contacts, distinct from INTERDEC's company number.
+
+### Differences within the supplied material
+
+The inventory table lists most residential lots as the typical 42.5′ × 129.5′ size. The embedded plan additionally labels areas including lots 1/30/49 at 5,515 sq ft, lot 10 at 5,519, lot 11 at 5,506, lot 20 at 5,507, and lots 39/40 at 5,715. The website identifies these source differences and directs visitors to confirm final dimensions. Static November inventory is not represented as live availability.
+
+The flyer summarizes the first three months after delivery as payment-free. The PDF labels delivery as month 1 but gives the precise example of no payments in May, June, and July after April 10 delivery. The website preserves the dated PDF example instead of inventing a reconciliation. The advertised installments do not pay the full purchase price; the remaining balance is explicitly due at the end.
+
+## Retained earlier illustrative images
+
+These earlier assets remain in the repository but have been replaced in the home hero and featured project by the supplied aerial-plan image:
+
+- `assets/images/hero-land.webp`: AI-generated illustrative South Texas landscape, not a photograph or verified representation of Puerta del Sol. Original prompt described flat South Texas land, open golden grass, a paved curving road, agricultural fields, and a distant low-rise neighborhood at golden hour, with no text, logos, or lot boundaries.
+- `assets/images/neighborhood.jpg`: representative Unsplash image, not Puerta del Sol. Original source: https://images.unsplash.com/photo-1592595896551-12b371d546d5?auto=format&fit=crop&w=2000&q=85 . License: https://unsplash.com/license .
 
 ## Typography
 
-Locally hosted fonts retrieved from Google Fonts:
+Fonts are hosted locally, with their SIL Open Font License files in `assets/fonts/`:
 
-- Manrope (variable weight 400–800): https://fonts.google.com/specimen/Manrope
-- Barlow Condensed (weights 500, 600, 700): https://fonts.google.com/specimen/Barlow+Condensed
-- Cormorant Garamond (italic 500): https://fonts.google.com/specimen/Cormorant+Garamond
+- Manrope: https://fonts.google.com/specimen/Manrope
+- Barlow Condensed: https://fonts.google.com/specimen/Barlow+Condensed
+- Cormorant Garamond: https://fonts.google.com/specimen/Cormorant+Garamond
 
-Their SIL Open Font License files are included in `assets/fonts/`. The website loads font files locally and does not contact Google Fonts at runtime.
+The site does not contact Google Fonts at runtime.
 
 ## Design references
 
-Reviewed for the requested visual direction:
-
-- https://am-utilities-construction.ideads.workers.dev/
-- https://maverickcapitaltx.com/
-
-INTERDEC's layout, code, copy, icons, and compositions were created for this deliverable. Competitor photos, testimonials, contact details, company metrics, project claims, and logos were not copied into the site.
+The original brief supplied https://am-utilities-construction.ideads.workers.dev/ and https://maverickcapitaltx.com/ as visual references. Their photos, testimonials, metrics, project claims, contact details, and logos were not copied into INTERDEC's website. Decorative architectural line art is not a site plan.

@@ -82,8 +82,8 @@
     $('#lot-count').textContent = String(count).padStart(2, '0');
     $('#lot-heading').textContent = t[type].heading;
     $('#lot-caption').textContent = t[type].caption;
-    $('#lot-size').textContent = config.project[`${type}Size`] || t.size;
-    $('#lot-price').textContent = config.project[`${type}Price`] || t.price;
+    $('#lot-size').textContent = config.project[`${type}Size${language === 'es' ? 'Es' : ''}`] || config.project[`${type}Size`] || t.size;
+    $('#lot-price').textContent = config.project[`${type}Price${language === 'es' ? 'Es' : ''}`] || config.project[`${type}Price`] || t.price;
     $('#project-inquiry').dataset.interest = type;
     $('#lot-panel').setAttribute('aria-labelledby', `${type}-tab`);
     $$('.project-tab').forEach(tab => {
@@ -226,6 +226,7 @@
     $('#countdown-days').textContent = String(Math.floor(positive / 86400000)).padStart(2, '0');
     $('#countdown-hours').textContent = String(Math.floor(positive / 3600000) % 24).padStart(2, '0');
     $('#countdown-minutes').textContent = String(Math.floor(positive / 60000) % 60).padStart(2, '0');
+    $('#countdown-seconds').textContent = String(Math.floor(positive / 1000) % 60).padStart(2, '0');
     $('.countdown-values').hidden = remaining <= 0;
     if (remaining <= 0) {
       $('.countdown-caption').textContent = copy[language].pastEvent;
@@ -236,7 +237,7 @@
       $('.project-bottom .text-link>span').textContent = language === 'en' ? 'View ceremony details' : 'Ver detalles de la ceremonia';
     }
   }
-  setInterval(updateCountdown, 30000);
+  setInterval(updateCountdown, 1000);
 
   // The default form is an honest, local draft, rather than a simulated delivery.
   $('#inquiry-form').addEventListener('submit', event => {
