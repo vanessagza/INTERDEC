@@ -7,7 +7,7 @@ This is plain HTML, CSS, and JavaScript. There is no installation, compilation, 
 ## 1. Open it on your computer
 
 1. Download and extract `INTERDEC-Website.zip` into a normal folder. Do not open the HTML from inside the ZIP.
-2. Open `index.html` in Chrome, Edge, Firefox, or Safari. Keep `styles.css`, `content.js`, `app.js`, and the `assets` folder beside it.
+2. Open `index.html` in Chrome, Edge, Firefox, or Safari. Keep `styles.css`, `design.css`, `content.js`, `app.js`, `effects.js`, and the `assets` folder beside it.
 3. Explore the page. Try the residential/commercial tabs, project details (+), development accordion, event invitation, calendar download, FAQ, and EN/ES switch.
 4. The contact form prepares an inquiry for review. With the company email still blank, you can copy or download the draft. It does not claim to send a message.
 5. Clipboard access can be restricted when opening a local HTML file. The download-text option still works; the copy button works on supported HTTPS sites.
@@ -18,11 +18,13 @@ This is plain HTML, CSS, and JavaScript. There is no installation, compilation, 
 | --- | --- |
 | `index.html` | Page sections, English copy, Spanish translations, links, SEO description |
 | `styles.css` | Colors, typography, page layout, responsiveness, and animation |
+| `design.css` | Architectural visual treatment: floating navigation, outlined type, survey graphics, project framing, and responsive refinements |
 | `content.js` | Company contact details, story, project prices/sizes, project phone, partnership wording, and event settings |
 | `app.js` | Tabs, language switching, countdown, dialogs, calendar and inquiry downloads |
+| `effects.js` | Optional scroll-linked parallax and typography, pointer lighting, subtle button/image response, and tab transitions |
 | `assets/images/` | Original logo, invitation poster, illustrative hero, and sample neighborhood photography |
 | `assets/fonts/` | Locally hosted fonts and their licenses |
-| `.nojekyll` | Prevents GitHub Pages from applying a Jekyll build |
+| `.nojekyll` (optional; not currently included) | Can be added to prevent GitHub Pages from applying a Jekyll build |
 | `ASSET-SOURCES.md` | Image provenance, font sources, and original factual sources |
 
 ### Fill in the missing information
@@ -67,7 +69,7 @@ These steps publish the preview online. A public repository makes the source fil
 1. Sign in to GitHub and create a repository, for example `interdec-website`. Use a visibility supported by your GitHub plan for Pages.
 2. Upload the **extracted files and folders**, not the ZIP itself. `index.html` must appear at the repository's top level. Avoid accidentally uploading a second enclosing `INTERDEC-Website` folder.
 3. Include the `assets` folder with its `images` and `fonts` subfolders. Confirm the capitalization is unchanged; hosted file paths are case-sensitive.
-4. Include `.nojekyll`. If your computer hides files whose names start with a dot, reveal hidden files first or add this empty file using GitHub's file editor.
+4. Optionally add an empty `.nojekyll` file using GitHub's file editor to bypass Jekyll processing. It is not currently included in this checkout.
 5. Commit the uploaded files to `main`.
 6. Open the repository's **Settings → Pages**.
 7. Under **Build and deployment → Source**, select **Deploy from a branch**.
@@ -82,7 +84,7 @@ Official GitHub Pages setup reference: https://docs.github.com/en/pages/quicksta
 ## 4. Move it to your chosen hosting service
 
 1. Finish and review the company details, project attribution, lot information, photographs, and final privacy text.
-2. Upload `index.html`, `styles.css`, `content.js`, `app.js`, and the complete `assets` folder into the host's public web directory. On many traditional hosts this is called `public_html`, `www`, or the domain's document root. Use the directory your provider specifies.
+2. Upload `index.html`, `styles.css`, `design.css`, `content.js`, `app.js`, `effects.js`, and the complete `assets` folder into the host's public web directory. On many traditional hosts this is called `public_html`, `www`, or the domain's document root. Use the directory your provider specifies.
 3. Keep the original relative folder structure. No application server or build command is required.
 4. Use the DNS values given by your chosen host to connect the GoDaddy domain. Buying the domain at GoDaddy does not require choosing GoDaddy hosting. DNS has deliberately not been changed as part of this delivery.
 5. Enable HTTPS using your host's supported setup and test the live domain.
@@ -108,3 +110,9 @@ If you later want visitors to click one button and have their inquiry delivered 
 ## Accessibility and privacy
 
 The site includes keyboard focus styles, a skip link, labeled inputs, native dialogs, keyboard-operable lot tabs, reduced-motion support, semantic headings, and responsive navigation. EN/ES selection is stored locally when the browser permits it. There are no analytics scripts, embedded maps, tracking pixels, third-party font requests, or advertising cookies. Maps open only when the visitor follows the directions link.
+
+## Visual effects
+
+The architectural treatment retains the supplied assets and navy identity, with champagne accents, a floating navigation frame, survey-inspired line art, an outlined hero headline, and a scroll-linked typography band. The line art is decorative, not a site plan. `design.css` loads after the base stylesheet; `effects.js` loads after the application script.
+
+Motion follows native scrolling; there is no scroll hijacking, replacement cursor, video, or animation library. Desktop pointer effects are subtle and disabled for touch input. The operating system's **Reduce motion** preference disables parallax, pointer movement, drawing animations, and entrance transitions. The typography band moves only while scrolling. Content remains readable if the enhancement script is unavailable.

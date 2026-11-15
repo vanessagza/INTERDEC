@@ -16,8 +16,10 @@
   <link rel="preload" href="assets/fonts/barlow-condensed.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/images/hero-land.webp" as="image" fetchpriority="high">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="design.css">
   <script src="content.js" defer></script>
   <script src="app.js" defer></script>
+  <script src="effects.js" defer></script>
 </head>
 <body id="top">
   <a class="skip-link" href="#main" data-es="Ir al contenido">Skip to content</a>
@@ -50,6 +52,17 @@
       <div class="hero-image" role="img" aria-label="Illustrative aerial view of open land and a new road at golden hour"></div>
       <div class="hero-shade"></div>
       <div class="hero-grid" aria-hidden="true"></div>
+      <div class="hero-survey" aria-hidden="true">
+        <svg viewBox="0 0 500 500" fill="none">
+          <circle class="survey-orbit" cx="250" cy="250" r="219"/>
+          <circle class="survey-dashes" cx="250" cy="250" r="204"/>
+          <circle class="survey-inner" cx="250" cy="250" r="164"/>
+          <path class="survey-axis" d="M0 250h500M250 0v500"/>
+          <path class="survey-sun" d="M170 275a80 80 0 0 1 160 0M130 275h240M160 291h180M193 307h114M250 154v-21M166 190l-16-16M334 190l16-16"/>
+          <g class="survey-points"><path d="M243 31h14m-7-7v14M243 469h14m-7-7v14M24 250h14m-7-7v14M462 250h14m-7-7v14"/><circle cx="250" cy="31" r="5"/><circle cx="250" cy="469" r="5"/></g>
+        </svg>
+        <span class="survey-label">INTERDEC <span>—</span> TEXAS, USA</span>
+      </div>
       <div class="hero-content">
         <p class="eyebrow hero-eyebrow"><span class="status-dot"></span><span data-es="DESARROLLO DE TERRENOS EN TEXAS">TEXAS LAND DEVELOPMENT</span></p>
         <h1 id="hero-title"><span data-es="GRANDES LUGARES">GREAT PLACES</span><span data-es="COMIENZAN CON">START WITH</span><em data-es="grandes terrenos.">great land.</em></h1>
@@ -60,6 +73,7 @@
         </div>
       </div>
       <a href="#projects" class="hero-project">
+        <span class="hero-project-mark" aria-hidden="true"><svg viewBox="0 0 100 70" fill="none"><path d="M10 58h80M26 58a24 24 0 0 1 48 0M50 5v10M21 15l7 8M79 15l-7 8M7 35l10 4M93 35l-10 4"/></svg></span>
         <span class="hero-project-top"><span class="eyebrow" data-es="PROYECTO DESTACADO / 01">FEATURED DEVELOPMENT / 01</span><svg class="icon"><use href="#arrow-up-right"/></svg></span>
         <span class="hero-project-name">Puerta del Sol</span>
         <span class="hero-project-bottom"><span>Donna, Texas</span><span data-es="49 residenciales · 3 comerciales">49 residential · 3 commercial</span></span>
@@ -73,7 +87,15 @@
       <div><span class="strip-number">03</span><span data-es="Venta de terrenos desarrollados">Developed land sales</span><svg class="icon"><use href="#arrow-up-right"/></svg></div>
     </div>
 
+    <div class="type-ribbon" aria-hidden="true">
+      <div class="type-ribbon-track">
+        <span class="ribbon-group"><span data-es="TERRENOS.">LAND.</span><svg viewBox="0 0 40 40"><path d="M20 0v40M0 20h40M6 6l28 28M6 34 34 6"/></svg><span data-es="POTENCIAL.">POTENTIAL.</span><svg viewBox="0 0 40 40"><path d="M20 0v40M0 20h40M6 6l28 28M6 34 34 6"/></svg><em data-es="Posibilidades.">Possibility.</em><svg viewBox="0 0 40 40"><path d="M20 0v40M0 20h40M6 6l28 28M6 34 34 6"/></svg></span>
+        <span class="ribbon-group"><span data-es="TERRENOS.">LAND.</span><svg viewBox="0 0 40 40"><path d="M20 0v40M0 20h40M6 6l28 28M6 34 34 6"/></svg><span data-es="POTENCIAL.">POTENTIAL.</span><svg viewBox="0 0 40 40"><path d="M20 0v40M0 20h40M6 6l28 28M6 34 34 6"/></svg><em data-es="Posibilidades.">Possibility.</em><svg viewBox="0 0 40 40"><path d="M20 0v40M0 20h40M6 6l28 28M6 34 34 6"/></svg></span>
+      </div>
+    </div>
+
     <section class="intro section-pad" id="company" aria-labelledby="intro-title">
+      <span class="intro-monogram" aria-hidden="true">I.</span>
       <div class="section-label reveal"><span class="label-index">01 /</span><span data-es="LA VISIÓN DE INTERDEC">THE INTERDEC VISION</span></div>
       <div class="intro-grid">
         <h2 class="display-title reveal" id="intro-title"><span data-es="Vemos más">We see more</span><br><span class="muted" data-es="que un terreno.">than land.</span></h2>
@@ -119,7 +141,7 @@
     </section>
 
     <section class="approach section-pad" id="approach" aria-labelledby="approach-title">
-      <div class="approach-art" aria-hidden="true"><svg viewBox="0 0 600 650" fill="none"><path d="M-100 500L500 60M-100 560L540 90M-100 620L580 120M-100 680L620 150M-100 740L660 180M-100 800L700 210M-100 860L740 240"/><path d="M60 80L560 560M0 120L520 620M-60 160L480 680M120 40L600 500M180 0L640 440"/><circle cx="336" cy="330" r="160"/><circle cx="336" cy="330" r="195"/><path d="M336 90v480M100 330h480"/></svg></div>
+      <div class="approach-art" aria-hidden="true"><svg viewBox="0 0 600 650" fill="none"><path pathLength="1000" d="M-100 500L500 60M-100 560L540 90M-100 620L580 120M-100 680L620 150M-100 740L660 180M-100 800L700 210M-100 860L740 240"/><path pathLength="1000" d="M60 80L560 560M0 120L520 620M-60 160L480 680M120 40L600 500M180 0L640 440"/><circle pathLength="1000" cx="336" cy="330" r="160"/><circle pathLength="1000" cx="336" cy="330" r="195"/><path pathLength="1000" d="M336 90v480M100 330h480"/></svg></div>
       <div class="approach-left"><div class="section-label light-label reveal"><span class="label-index">03 /</span><span data-es="NUESTRO PROCESO">OUR APPROACH</span></div><h2 class="display-title reveal" id="approach-title"><span data-es="Una visión.">One vision.</span><br><em data-es="Desde el terreno.">From the<br>ground up.</em></h2><p class="reveal" data-es="De la adquisición a la venta de terrenos desarrollados, cada etapa acerca una propiedad a su siguiente propósito.">From acquisition to developed land sales, every stage brings a property closer to its next purpose.</p><a class="text-link light reveal" href="#contact" data-interest="land"><span data-es="¿Tienes un terreno para vender?">Have land to sell?</span><svg class="icon"><use href="#arrow-up-right"/></svg></a></div>
       <div class="process-list reveal">
         <details class="process-step" name="development-process" open><summary><span class="process-number">01</span><h3 data-es="Encontrar el potencial.">Find the potential.</h3><span class="process-toggle"></span></summary><div class="process-body"><span class="eyebrow" data-es="ADQUISICIÓN DE TERRENOS">LAND ACQUISITION</span><p data-es="Todo desarrollo comienza con un terreno. Nuestro punto de partida es adquirir propiedades y visualizar en qué se pueden convertir.">Every development starts with a piece of land. Our starting point is acquiring property and seeing what it could become.</p></div></details>

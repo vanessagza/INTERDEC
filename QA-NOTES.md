@@ -27,3 +27,16 @@ Verified on November 15, 2026, in Chromium using the local website preview.
 Company contact details, company story, precise project role and partners, approved photography, lot dimensions and prices, sales availability, the event entrance, and the final privacy text.
 
 The live GoDaddy domain, final hosting provider, external email delivery, and a physical mobile device have not been tested. The default inquiry form deliberately prepares a local draft. It requires a configured real email address to offer the visitor an email-app handoff; server-side form delivery is a later integration.
+
+## Architectural style update — November 15, 2026
+
+Additional Chromium checks after adding `design.css`, `effects.js`, and decorative markup:
+
+- English and Spanish at 320, 390, 700, 768, 900, 1024, 1280, 1440, and 1920px: no horizontal page overflow or hero-control/project-card collisions. The English headline was refined to stay on one line per phrase at 320px.
+- Floating navigation, keyboard-operated project tabs, project/invitation dialogs, Escape closing, mobile navigation, language persistence, inquiry preview, and inquiry text download passed.
+- Calendar downloads in both languages retain `DTSTART:20261202T163000Z`, with no invented end time. Process accordion and FAQ interactions passed.
+- Pointer lighting, subtle button movement, image tilt, and scroll-linked typography passed. Pointer effects are disabled on touch/mobile; reduced-motion settings disable effects and immediately show content, including when the setting changes while the page is open.
+- The site and new assets load under the `/INTERDEC/` repository subpath. No JavaScript exceptions or failed asset requests were observed in these checks. JavaScript syntax checks passed.
+- Reading content and the no-script notice remain available with JavaScript disabled. With only the optional enhancement script unavailable, the application retains its existing controls.
+
+These checks used local Chromium browser emulation, not physical devices or other browser engines. The updated files have not been deployed to GitHub Pages or final hosting as part of this style update. No company/project facts or image assets changed.
