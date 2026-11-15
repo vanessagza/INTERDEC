@@ -58,7 +58,7 @@ The project information comes from the supplied **Puerta del Sol — Lot & Build
 - The materials credit AVIG Development as developer, and Allen Lozano BIG Realty and INTERDEC with bringing the project together. They do not establish INTERDEC as sole owner/developer.
 - The ceremony is announced for Wednesday, December 2, 2026 at 10:30 AM in Donna (CST), equivalent to 16:30 UTC. The countdown uses that instant and includes seconds. No end time is invented. After the date passes, event wording changes and the calendar action is hidden.
 
-The home hero and project image now use the supplied aerial with a proposed lot-plan overlay. It must not be described as a photograph of a completed development. The separate nearby-retail image shows the surrounding retail corridor; its shopping-center lot labels are not Puerta del Sol inventory. See `ASSET-SOURCES.md` for asset details.
+The home hero uses a sharper AI-regenerated aerial concept based on the supplied image. The featured project and site-plan sections retain the original package imagery. Neither proposed layouts nor the regenerated hero should be described as completed construction or a final survey. The separate nearby-retail image shows the surrounding retail corridor; its shopping-center lot labels are not Puerta del Sol inventory. See `ASSET-SOURCES.md` for asset details.
 
 ## Contact and careers forms
 
@@ -82,3 +82,7 @@ The current repository is `vanessagza/INTERDEC`, with a GitHub Pages preview at 
 The site retains keyboard controls, labeled forms, native dialogs, reduced-motion support, and English/Spanish switching. Desktop pointer effects are disabled for touch input. Motion follows native scrolling; there is no scroll hijacking or replacement cursor. The typography band moves only while scrolling, and reduced-motion settings disable decorative motion.
 
 Language preference can be stored locally in the browser. There are no analytics scripts, embedded maps, third-party font requests, or advertising cookies. Maps open when a visitor follows a directions link. Review the company privacy text before final launch and update it if integrations change.
+
+## Readability refinements
+
+Small labels, navigation, captions, and supporting text have been increased to a minimum of 12px; former 12–13px supporting copy is now 14px. Existing text at 14px and above, including display headings and large numbers, retains its original size. Navigation is unnumbered on desktop and mobile. Responsive spacing accommodates the larger supporting text.

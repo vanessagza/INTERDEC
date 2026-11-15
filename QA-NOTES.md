@@ -27,3 +27,12 @@ Inventory and pricing are a November 2026 snapshot, not a live booking system. C
 Company history, office address, specific career openings, and final privacy policy remain unprovided. Forms prepare local drafts and open the visitor's email application; automatic form delivery and mailbox receipt have not been tested or implemented.
 
 Checks used Chromium emulation, not physical devices or other browser engines. Direct access to the live GitHub Pages URL is blocked by this environment's network policy; deployment status is checked through GitHub Actions. GoDaddy DNS and final hosting have not been changed.
+
+## Readability and home hero update — November 16, 2026
+
+- Small navigation, labels, captions, notes, and controls now have a 12px minimum; former 12–13px supporting copy is 14px. Existing type at 14px and above retains its prior size.
+- Computed heading and large numeric sizes were compared against the preceding Git version on all four pages, in English and Spanish at 320, 390, 768, 1024, and 1440px. No large-type size changes were found.
+- Desktop navigation counters and mobile menu number markup were removed. Project/lot numbers and section indexes remain part of their content.
+- Layout checks show no horizontal page overflow or hero control/card collisions; mobile and tablet spacing accommodates the larger copy and captions.
+- The home hero now uses `puerta-del-sol-hero-hd.webp`, a sharper 1536 × 1024 AI-regenerated concept based on the supplied aerial, encoded as WebP without resizing. The preload matches the displayed asset. It is not an exact photographic restoration; detailed features and proposed lot outlines can differ. Original project/plan images remain unchanged.
+- Home countdown, contacts, bilingual lot values, inquiry drafts/downloads, calendar, filters/details, subpage draft forms, navigation, language persistence, no-JavaScript reading, links, assets, and `/INTERDEC/` subpath checks passed after the update. No browser exceptions or failed asset requests were observed.

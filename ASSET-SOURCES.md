@@ -20,7 +20,7 @@ The following assets were extracted from embedded PDF images without generative 
 
 | Asset in `assets/images/package/` | PDF source and interpretation |
 | --- | --- |
-| `puerta-del-sol-aerial-plan.jpeg` | Page 2; supplied aerial with a proposed subdivision/lot-plan overlay. Used for the home hero and featured project. Not proof of completed streets, construction, recording, or final parcel dimensions. |
+| `puerta-del-sol-aerial-plan.jpeg` | Page 2; supplied aerial with a proposed subdivision/lot-plan overlay. Used unchanged for the featured project and as the reference for the regenerated home hero. Not proof of completed streets, construction, recording, or final parcel dimensions. |
 | `nearby-retail-aerial.jpeg` | Page 3; nearby retail corridor. Shopping-center “available” labels refer to that retail illustration, not Puerta del Sol lots. |
 | `puerta-del-sol-site-plan.jpeg` | Page 4; supplied proposed site plan over an aerial. Preserve the distinction between a proposed plan and a recorded final plat. |
 | `allen-lozano.jpeg` | Page 8; supplied portrait of Allen Lozano. |
@@ -52,9 +52,15 @@ The inventory table lists most residential lots as the typical 42.5′ × 129.5�
 
 The flyer summarizes the first three months after delivery as payment-free. The PDF labels delivery as month 1 but gives the precise example of no payments in May, June, and July after April 10 delivery. The website preserves the dated PDF example instead of inventing a reconciliation. The advertised installments do not pay the full purchase price; the remaining balance is explicitly due at the end.
 
+## Regenerated home hero — November 16, 2026
+
+`assets/images/puerta-del-sol-hero-hd.webp` is an AI-regenerated aerial concept based on `assets/images/package/puerta-del-sol-aerial-plan.jpeg`, produced at a native 1536 × 1024 resolution and encoded as WebP for delivery. The request was to reproduce the original composition with clearer detail and a more cinematic finish. It is a generative recreation, not a lossless upscale: individual landscape details and drawn lot outlines can differ. The hero is labeled accordingly. It is not a survey, an untouched project photograph, or evidence of final parcel dimensions or completed works.
+
+The original PDF, supplied aerial, project photograph, and proposed site plan remain available unchanged elsewhere on the website. No availability or dimension data is derived from the regenerated image. The homepage preloads this same WebP file rather than the unused earlier illustrative hero.
+
 ## Retained earlier illustrative images
 
-These earlier assets remain in the repository but have been replaced in the home hero and featured project by the supplied aerial-plan image:
+These earlier assets remain in the repository but are no longer displayed in the home hero or featured project:
 
 - `assets/images/hero-land.webp`: AI-generated illustrative South Texas landscape, not a photograph or verified representation of Puerta del Sol. Original prompt described flat South Texas land, open golden grass, a paved curving road, agricultural fields, and a distant low-rise neighborhood at golden hour, with no text, logos, or lot boundaries.
 - `assets/images/neighborhood.jpg`: representative Unsplash image, not Puerta del Sol. Original source: https://images.unsplash.com/photo-1592595896551-12b371d546d5?auto=format&fit=crop&w=2000&q=85 . License: https://unsplash.com/license .
