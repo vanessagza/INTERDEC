@@ -17,14 +17,31 @@
   let draft = '';
   let subject = '';
 
-  function closeMenu() {
+  let menuCloseTimer;
+  function closeMenu(immediate = false) {
     if (!menu || !menuButton) return;
-    menu.hidden = true;
+    clearTimeout(menuCloseTimer);
     menuButton.setAttribute('aria-expanded', 'false');
     menuButton.setAttribute('aria-label', language === 'en' ? 'Open navigation' : 'Abrir navegación');
     document.body.classList.remove('menu-open');
     if (main) main.inert = false;
     if (footer) footer.inert = false;
+    if (menu.hidden || immediate || matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      menu.hidden = true;
+      menu.inert = false;
+      menu.classList.remove('is-closing');
+      return;
+    }
+    const menuStyle = getComputedStyle(menu);
+    menu.style.setProperty('--menu-exit-clip', menuStyle.clipPath);
+    menu.style.setProperty('--menu-exit-transform', menuStyle.transform);
+    menu.inert = true;
+    menu.classList.add('is-closing');
+    menuCloseTimer = setTimeout(() => {
+      menu.hidden = true;
+      menu.inert = false;
+      menu.classList.remove('is-closing');
+    }, 180);
   }
 
   function applyLanguage(next, persist = false) {
@@ -37,7 +54,7 @@
       $('.language-es', toggle)?.classList.toggle('active', language === 'es');
       toggle.setAttribute('aria-label', language === 'en' ? 'Switch to Spanish' : 'Cambiar a inglés');
     }
-    closeMenu();
+    closeMenu(true);
     if (persist) { try { localStorage.setItem('interdec-language', language); } catch (_) {} }
     document.dispatchEvent(new CustomEvent('interdec:language', { detail: { language } }));
   }
@@ -45,15 +62,19 @@
   toggle?.addEventListener('click', () => applyLanguage(language === 'en' ? 'es' : 'en', true));
   menuButton?.addEventListener('click', () => {
     const open = menuButton.getAttribute('aria-expanded') !== 'true';
+    if (!open) { closeMenu(); return; }
+    clearTimeout(menuCloseTimer);
+    menu.classList.remove('is-closing');
+    menu.inert = false;
     menu.hidden = !open;
     menuButton.setAttribute('aria-expanded', String(open));
     menuButton.setAttribute('aria-label', open ? (language === 'en' ? 'Close navigation' : 'Cerrar navegación') : (language === 'en' ? 'Open navigation' : 'Abrir navegación'));
     document.body.classList.toggle('menu-open', open);
     if (main) main.inert = open;
     if (footer) footer.inert = open;
-    if (open) $('a', menu)?.focus();
+    if (open) $('a', menu)?.focus({ preventScroll: true });
   });
-  if (menu) $$('a', menu).forEach(a => a.addEventListener('click', closeMenu));
+  if (menu) $$('a', menu).forEach(a => a.addEventListener('click', () => closeMenu(true)));
   document.addEventListener('pointerdown', event => {
     if (menu && !menu.hidden && !menu.contains(event.target) && !$('#site-header').contains(event.target)) {
       closeMenu();
@@ -63,7 +84,7 @@
   document.addEventListener('keydown', event => {
     if (event.key === 'Escape' && menu && !menu.hidden) { closeMenu(); menuButton.focus(); }
   });
-  matchMedia('(min-width:1101px)').addEventListener('change', event => { if (event.matches) closeMenu(); });
+  matchMedia('(min-width:1101px)').addEventListener('change', event => { if (event.matches) closeMenu(true); });
 
   $$('[data-company-email]').forEach(element => {
     const email = config.company.email || 'info@interdecgroup.com';

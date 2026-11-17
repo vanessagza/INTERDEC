@@ -102,3 +102,7 @@ Available Lots, Invest, and Careers preload their own cinematic photo background
 The current pages contain complete, intentional copy. Commercial lot prices are provided directly by the project sales team. Careers invites professional introductions and connections with INTERDEC.
 
 Useful future improvements include direct form delivery, so visitors can send an inquiry without opening an email app, and a regular inventory update process to keep lot availability and program capacity current.
+
+## Mobile menu motion
+
+Every page uses the same eight-link mobile menu, starting with Home/Inicio. The compact glass panel opens from the menu button with a circular reveal, a brief light sweep, and staggered links. It folds away when dismissed; quick close/reopen actions cancel pending hides. Navigating or switching to desktop dismisses immediately. Reduced-motion preferences disable the decorative animations.

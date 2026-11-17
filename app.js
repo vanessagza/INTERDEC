@@ -123,25 +123,46 @@
   // Mobile navigation: avoid trapping focus in a hidden menu.
   const mobileMenu = $('#mobile-nav');
   const menuButton = $('.menu-toggle');
-  function closeMenu() {
-    mobileMenu.hidden = true;
+  let menuCloseTimer;
+  function closeMenu(immediate = false) {
+    clearTimeout(menuCloseTimer);
     menuButton.setAttribute('aria-expanded', 'false');
     menuButton.setAttribute('aria-label', language === 'en' ? 'Open navigation' : 'Abrir navegación');
     document.body.classList.remove('menu-open');
     $('main').inert = false;
     $('.site-footer').inert = false;
+    if (mobileMenu.hidden || immediate || matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      mobileMenu.hidden = true;
+      mobileMenu.inert = false;
+      mobileMenu.classList.remove('is-closing');
+      return;
+    }
+    const menuStyle = getComputedStyle(mobileMenu);
+    mobileMenu.style.setProperty('--menu-exit-clip', menuStyle.clipPath);
+    mobileMenu.style.setProperty('--menu-exit-transform', menuStyle.transform);
+    mobileMenu.inert = true;
+    mobileMenu.classList.add('is-closing');
+    menuCloseTimer = setTimeout(() => {
+      mobileMenu.hidden = true;
+      mobileMenu.inert = false;
+      mobileMenu.classList.remove('is-closing');
+    }, 180);
   }
   menuButton.addEventListener('click', () => {
     const open = menuButton.getAttribute('aria-expanded') !== 'true';
+    if (!open) { closeMenu(); return; }
+    clearTimeout(menuCloseTimer);
+    mobileMenu.classList.remove('is-closing');
+    mobileMenu.inert = false;
     mobileMenu.hidden = !open;
     menuButton.setAttribute('aria-expanded', String(open));
     menuButton.setAttribute('aria-label', open ? (language === 'en' ? 'Close navigation' : 'Cerrar navegación') : (language === 'en' ? 'Open navigation' : 'Abrir navegación'));
     document.body.classList.toggle('menu-open', open);
     $('main').inert = open;
     $('.site-footer').inert = open;
-    if (open) $('a', mobileMenu).focus();
+    if (open) $('a', mobileMenu).focus({ preventScroll: true });
   });
-  $$('a', mobileMenu).forEach(link => link.addEventListener('click', closeMenu));
+  $$('a', mobileMenu).forEach(link => link.addEventListener('click', () => closeMenu(true)));
   document.addEventListener('pointerdown', event => {
     if (!mobileMenu.hidden && !mobileMenu.contains(event.target) && !$('#site-header').contains(event.target)) {
       closeMenu();
@@ -152,11 +173,11 @@
     if (event.key === 'Escape' && !mobileMenu.hidden) { closeMenu(); menuButton.focus(); }
   });
   const desktopMedia = matchMedia('(min-width:1101px)');
-  desktopMedia.addEventListener('change', event => { if (event.matches) closeMenu(); });
+  desktopMedia.addEventListener('change', event => { if (event.matches) closeMenu(true); });
 
   // Native dialogs supply keyboard focus containment and Escape-to-close.
   function openDialog(id) {
-    closeMenu();
+    closeMenu(true);
     const dialog = $(id);
     if (!dialog.open) dialog.showModal();
   }
