@@ -20,7 +20,6 @@
 
   let heroVisible = true;
   let ribbonVisible = true;
-  let ribbonFrame = 0;
   let frame = 0;
   let shift = 0;
   let targetShift = 0;
@@ -60,16 +59,6 @@
   }
 
   function onScroll() {
-    if (ribbon && ribbonVisible && enabled() && !ribbonFrame) {
-      // Scroll supplies the only clock: no continuous marquee or idle animation.
-      ribbonFrame = requestAnimationFrame(() => {
-        ribbonFrame = 0;
-        if (!enabled() || !ribbonVisible) return;
-        const bounds = ribbon.getBoundingClientRect();
-        const progress = Math.max(0, Math.min(1, (innerHeight - bounds.top) / (innerHeight + bounds.height)));
-        ribbon.style.setProperty('--ribbon-shift', `${(80 - progress * 160).toFixed(2)}px`);
-      });
-    }
     if (!parallaxEnabled() || !heroVisible) return;
     const bounds = hero.getBoundingClientRect();
     const progress = Math.max(0, Math.min(1, -bounds.top / bounds.height));
@@ -154,8 +143,7 @@
         }
         if (entry.target === ribbon) {
           ribbonVisible = entry.isIntersecting;
-          if (ribbonVisible) onScroll();
-          else if (ribbonFrame) { cancelAnimationFrame(ribbonFrame); ribbonFrame = 0; }
+          ribbon.classList.toggle('is-paused', !ribbonVisible || !enabled());
         }
       });
     }, { threshold: 0 });
@@ -171,8 +159,7 @@
     precisionAllowed = finePointer.matches;
     document.body.classList.toggle('effects-ready', motionAllowed);
     if (frame) { cancelAnimationFrame(frame); frame = 0; }
-    if (ribbonFrame) { cancelAnimationFrame(ribbonFrame); ribbonFrame = 0; }
-    if (!enabled() && ribbon) ribbon.style.removeProperty('--ribbon-shift');
+    if (ribbon) ribbon.classList.toggle('is-paused', !ribbonVisible || !enabled());
     buttons.forEach(resetButton);
     resetVisual();
     if (!parallaxEnabled()) {

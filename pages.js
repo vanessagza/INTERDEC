@@ -54,6 +54,12 @@
     if (open) $('a', menu)?.focus();
   });
   if (menu) $$('a', menu).forEach(a => a.addEventListener('click', closeMenu));
+  document.addEventListener('pointerdown', event => {
+    if (menu && !menu.hidden && !menu.contains(event.target) && !$('#site-header').contains(event.target)) {
+      closeMenu();
+      menuButton.focus();
+    }
+  });
   document.addEventListener('keydown', event => {
     if (event.key === 'Escape' && menu && !menu.hidden) { closeMenu(); menuButton.focus(); }
   });

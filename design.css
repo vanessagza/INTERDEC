@@ -802,3 +802,89 @@ html[lang=es] .hero h1 { font-size: clamp(70px, 7.3vw, 128px); }
   .launch-facts > div { padding-block: 22px; }
   .countdown-values { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
 }
+
+/* A compact glass menu leaves the page visible around it. */
+.mobile-nav {
+  position: fixed;
+  top: 94px;
+  left: auto;
+  right: clamp(12px, 2vw, 24px);
+  bottom: auto;
+  width: min(420px, calc(100vw - 24px));
+  max-height: calc(100dvh - 110px);
+  padding: 10px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  background: #062b4ea3;
+  color: #fff;
+  border: 1px solid #ffffff35;
+  border-radius: 18px;
+  box-shadow: 0 20px 65px #00101f40, inset 0 1px 0 #ffffff12;
+  backdrop-filter: blur(24px) saturate(135%);
+  -webkit-backdrop-filter: blur(24px) saturate(135%);
+}
+.mobile-nav a {
+  display: flex;
+  align-items: center;
+  min-height: 48px;
+  margin: 0;
+  padding: 10px 14px;
+  border: 0;
+  border-radius: 10px;
+  font-family: var(--sans);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -.02em;
+  transition: background .2s, color .2s;
+}
+.mobile-nav a > span, .mobile-nav a > span:last-child {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+}
+.mobile-nav a:hover, .mobile-nav a[aria-current=page] { background: #ffffff13; color: #f0cd7e; }
+.mobile-nav a:focus-visible { outline-offset: -2px; }
+.mobile-nav > .eyebrow {
+  display: block;
+  margin: 6px 10px 0;
+  padding: 13px 4px 4px;
+  border-top: 1px solid #ffffff25;
+  color: #dfc38a;
+  font-size: 14px;
+  line-height: 1.5;
+  letter-spacing: .08em;
+}
+@media (max-width: 700px) {
+  .mobile-nav { top: 90px; max-height: calc(100dvh - 106px); }
+}
+@media (max-height: 560px) and (max-width: 479px) {
+  .mobile-nav { padding: 8px; }
+  .mobile-nav a { min-height: 44px; padding-block: 8px; }
+  .mobile-nav > .eyebrow { padding-top: 10px; }
+}
+@media (max-height: 500px) and (min-width: 480px) and (max-width: 1100px) {
+  .site-header, .site-header.scrolled { height: 64px; padding-block: 5px; }
+  .brand img { height: 54px; }
+  .mobile-nav {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 8px;
+    top: 74px;
+    width: min(620px, calc(100vw - 24px));
+    max-height: calc(100dvh - 86px);
+    padding: 8px;
+  }
+  .mobile-nav a { min-height: 44px; padding: 8px 12px; font-size: 18px; }
+  .mobile-nav > .eyebrow { grid-column: 1 / -1; margin-top: 4px; padding-top: 8px; }
+}
+
+/* Four matching groups keep the ribbon seamless as it drifts on its own. */
+.type-ribbon-track { transform: none; animation: ribbonDrift 80s linear infinite; will-change: transform; }
+.type-ribbon.is-paused .type-ribbon-track { animation-play-state: paused; }
+@keyframes ribbonDrift { from { transform: translateX(0); } to { transform: translateX(-25%); } }
+@media (prefers-reduced-motion: reduce) {
+  .type-ribbon-track { animation: none; transform: none; will-change: auto; }
+}

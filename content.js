@@ -1,4 +1,4 @@
-/* INTERDEC website settings. Replace empty contact fields before launch.
+/* INTERDEC website settings. Empty office/story fields use the page defaults.
    No build tools, secret keys, accounts, or paid services are required. */
 window.INTERDEC = {
   company: {

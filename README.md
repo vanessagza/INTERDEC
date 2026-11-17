@@ -79,7 +79,7 @@ The current repository is `vanessagza/INTERDEC`, with a GitHub Pages preview at 
 
 ## Motion, accessibility, and privacy
 
-The site retains keyboard controls, labeled forms, native dialogs, reduced-motion support, and English/Spanish switching. Desktop pointer effects are disabled for touch input. Motion follows native scrolling; there is no scroll hijacking or replacement cursor. The typography band moves only while scrolling, and reduced-motion settings disable decorative motion.
+The site retains keyboard controls, labeled forms, native dialogs, reduced-motion support, and English/Spanish switching. Desktop pointer effects are disabled for touch input. The site uses native scrolling without scroll hijacking or a replacement cursor. The typography band drifts slowly on a continuous loop while visible, including when the visitor is not scrolling. It pauses offscreen, when the browser tab is hidden, and for reduced-motion preferences.
 
 Language preference can be stored locally in the browser. There are no analytics scripts, embedded maps, third-party font requests, or advertising cookies. Maps open when a visitor follows a directions link. Review the company privacy text before final launch and update it if integrations change.
 
@@ -96,3 +96,13 @@ The realtor cards display separate 1254 × 1254 AI-enhanced WebP portraits. The 
 Company contact links and all inquiry fallbacks use `info@interdecgroup.com`. The blue LAND/POTENTIAL/POSSIBILITY ribbon now separates the company intro from the projects section. Desktop menus have wider spacing. Home pointer effects include stronger image movement and lighting, plus a stronger featured-image tilt; touch input and reduced-motion preferences disable those effects.
 
 Available Lots, Invest, and Careers preload their own cinematic photo backgrounds. The Careers background places the couple on the right. Invest uses a separate enhanced aerial in a wide image frame; Top Texas Title's white source mark is darkened on its white partner card. See `ASSET-SOURCES.md` for derivative-image provenance.
+
+## Remaining company information
+
+There are no visible unfinished content placeholders. The following details are handled with general wording until supplied:
+
+- Office address and, if desired, visiting hours. Current copy asks visitors to contact the team to arrange a visit.
+- Commercial lot prices, ideally separate prices and terms for lots 50, 51, and 52. Current copy directs buyers to the sales team.
+- Specific vacancies, role requirements, location/work arrangement, and application deadlines if actively recruiting. Careers currently accepts general expressions of interest.
+
+Optional additions include the founder's name, founding year, and factual company milestones to personalize the existing mission story; and a company-authored privacy policy if one exists. The current story and website privacy explanation are complete and usable.

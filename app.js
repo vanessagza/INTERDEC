@@ -144,6 +144,12 @@
     if (open) $('a', mobileMenu).focus();
   });
   $$('a', mobileMenu).forEach(link => link.addEventListener('click', closeMenu));
+  document.addEventListener('pointerdown', event => {
+    if (!mobileMenu.hidden && !mobileMenu.contains(event.target) && !$('#site-header').contains(event.target)) {
+      closeMenu();
+      menuButton.focus();
+    }
+  });
   document.addEventListener('keydown', event => {
     if (event.key === 'Escape' && !mobileMenu.hidden) { closeMenu(); menuButton.focus(); }
   });
