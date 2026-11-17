@@ -2,7 +2,7 @@
 .subpage { background: #f7f8f8; }
 .subpage .site-header { background: #031c3060; }
 .subpage .site-header.scrolled { background: #031c30ed; }
-.subpage .desktop-nav { gap: 27px; margin-right: 35px; }
+.subpage .desktop-nav { gap: clamp(32px, 3vw, 48px); margin-right: clamp(32px, 3vw, 54px); }
 .subpage .desktop-nav a { font-size: 14px; }
 .subpage .desktop-nav a[aria-current=page]::after { width: 100%; }
 .subpage .desktop-nav a::before { display: none; }
@@ -159,3 +159,76 @@
 .investment-visual figcaption { padding-top: 15px; color: #bfd0db; font-size: 14px; }
 .partner-item img { height: 58px; width: 150px; object-fit: contain; object-position: left center; margin-bottom: 22px; }
 @media (max-width:700px) { .investment-visual { padding-top:0; } .investment-visual img { max-height: none; } }
+
+/* Each page opens on a landscape, with a shaded reading area on the left. */
+.lots-page .page-hero { --page-hero-image: url('assets/images/lots-hero-cinematic.webp'); --page-hero-position: 50% 52%; }
+.invest-page .page-hero { --page-hero-image: url('assets/images/invest-hero-sunset.webp'); --page-hero-position: 50% 54%; }
+.careers-page .page-hero { --page-hero-image: url('assets/images/careers-hero.webp'); --page-hero-position: 50% 45%; }
+.lots-page .page-hero, .invest-page .page-hero, .careers-page .page-hero {
+  min-height: 760px;
+  display: flex;
+  align-items: center;
+  padding-top: 185px;
+  padding-bottom: 80px;
+  background: var(--deep);
+}
+.lots-page .page-hero::before, .invest-page .page-hero::before, .careers-page .page-hero::before {
+  background-image: linear-gradient(90deg, #031c30f2 0%, #031c30da 27%, #031c3096 53%, #031c3020 100%),
+                    linear-gradient(0deg, #031c30d9 0%, transparent 65%, #031c3040 100%),
+                    var(--page-hero-image);
+  background-size: cover;
+  background-position: var(--page-hero-position, center);
+}
+.page-hero-inner { width: 100%; }
+.page-hero .page-title { max-width: 850px; }
+.page-hero .page-lead { color: #edf3f6; max-width: 590px; text-shadow: 0 2px 12px #031c3040; }
+.page-hero .page-kicker { color: #e4bd66; }
+.page-hero .page-actions { gap: 22px 30px; }
+.page-hero .text-link { text-shadow: 0 2px 12px #031c3060; }
+.lots-page .lots-hero-art { display: none; }
+.lots-page .lots-snapshot { max-width: 710px; color: #e1d6b8; }
+.invest-page .stat-grid { max-width: 1060px; background: #031c30b8; backdrop-filter: blur(12px); border-color: #ffffff40; }
+.invest-page .stat-card { border-color: #ffffff30; }
+.invest-page .stat-label { color: #edf3f6; }
+.careers-page .page-hero .page-title { max-width: 680px; }
+.careers-page .page-hero .page-lead { max-width: 540px; }
+
+/* White source artwork needs a dark ink treatment on the partner cards. */
+.partner-item img[src$="top-texas-title-logo.png"] { filter: brightness(0) saturate(100%); }
+
+/* Fill the project image frame; preserve the subdivision in the lower field. */
+.investment-visual img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2.2 / 1;
+  max-height: none;
+  object-fit: cover;
+  object-position: center 68%;
+}
+@media (max-width: 1100px) {
+  .lots-page .page-hero, .invest-page .page-hero, .careers-page .page-hero { padding-top: 155px; }
+  .page-hero .page-title { max-width: 760px; }
+  .careers-page .page-hero::before { background-position: 60% 45%; }
+}
+@media (max-width: 700px) {
+  .lots-page .page-hero, .invest-page .page-hero, .careers-page .page-hero {
+    min-height: 740px;
+    padding-top: 135px;
+    padding-bottom: 55px;
+  }
+  .lots-page .page-hero::before, .invest-page .page-hero::before, .careers-page .page-hero::before {
+    background-image: linear-gradient(90deg, #031c30e8, #031c30a6 75%, #031c3080),
+                      linear-gradient(0deg, #031c30eb 0%, transparent 75%),
+                      var(--page-hero-image);
+  }
+  .careers-page .page-hero::before { background-position: 100% 45%; }
+  .page-hero .page-actions { gap: 18px; }
+  .page-hero .page-actions .button { min-height: 56px; }
+  .invest-page .stat-grid { grid-template-columns: minmax(0, 1fr); }
+  .invest-page .stat-card { display: grid; grid-template-columns: 110px minmax(0, 1fr); gap: 15px; align-items: center; padding: 20px 18px; border-right: 0; border-bottom: 1px solid #ffffff30; }
+  .invest-page .stat-card:last-child { border-bottom: 0; }
+  .invest-page .stat-value { font-size: 42px; }
+  .invest-page .stat-label { margin-top: 0; }
+  .investment-visual img { aspect-ratio: 1.35 / 1; object-position: center 70%; }
+}

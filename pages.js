@@ -60,7 +60,7 @@
   matchMedia('(min-width:1101px)').addEventListener('change', event => { if (event.matches) closeMenu(); });
 
   $$('[data-company-email]').forEach(element => {
-    const email = config.company.email || 'contact@interdecgroup.com';
+    const email = config.company.email || 'info@interdecgroup.com';
     element.textContent = email;
     element.href = `mailto:${email}`;
   });
@@ -93,7 +93,7 @@
     draft = `${subject}\n\n${entries.join('\n\n')}`;
     const dialog = $('#message-dialog');
     $('#message-preview').textContent = draft;
-    $('#open-email').href = `mailto:${config.company.email || 'contact@interdecgroup.com'}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(draft)}`;
+    $('#open-email').href = `mailto:${config.company.email || 'info@interdecgroup.com'}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(draft)}`;
     if (!dialog.open) dialog.showModal();
   }));
   $$('[data-close]').forEach(button => button.addEventListener('click', () => button.closest('dialog').close()));

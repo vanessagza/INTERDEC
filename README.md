@@ -37,7 +37,7 @@ The site uses INTERDEC's navy identity and **`#C9A24A` gold**, sampled directly 
 
 ## Company contacts and story
 
-Vanessa supplied **contact@interdecgroup.com** and **+52 81 1414 5035** as INTERDEC's company contacts. The phone's machine-readable form is `+528114145035`. The project sales team's US phone numbers remain separately labeled.
+Vanessa supplied **info@interdecgroup.com** and **+52 81 1414 5035** as INTERDEC's company contacts. The phone's machine-readable form is `+528114145035`. The project sales team's US phone numbers remain separately labeled.
 
 Start with `content.js` when updating company details. Preserve quotation marks and commas. The home page includes an English/Spanish company story centered on its purpose and values, without unverified founder details or dates. `company.story` and `company.storyEs` optionally replace its opening paragraph. The office address is not yet supplied; visitors are invited to contact the team to arrange a visit.
 
@@ -90,3 +90,9 @@ Navigation, labels, captions, and notes use a 14px minimum. Supporting copy uses
 The transparent navy navigation darkens on scroll and uses the supplied transparent white INTERDEC logo. The footer uses the supplied transparent dark mark. Sponsors and project credits sit on white; the company story uses blue. Top Texas Title's supplied white mark receives a navy CSS treatment for readability.
 
 The realtor cards display separate 1254 × 1254 AI-enhanced WebP portraits. The enhancement requests prioritized preserving facial identity and composition; small generative differences can remain. The supplied originals and PDF are retained unchanged. See `ASSET-SOURCES.md`.
+
+## November 17 follow-up
+
+Company contact links and all inquiry fallbacks use `info@interdecgroup.com`. The blue LAND/POTENTIAL/POSSIBILITY ribbon now separates the company intro from the projects section. Desktop menus have wider spacing. Home pointer effects include stronger image movement and lighting, plus a stronger featured-image tilt; touch input and reduced-motion preferences disable those effects.
+
+Available Lots, Invest, and Careers preload their own cinematic photo backgrounds. The Careers background places the couple on the right. Invest uses a separate enhanced aerial in a wide image frame; Top Texas Title's white source mark is darkened on its white partner card. See `ASSET-SOURCES.md` for derivative-image provenance.

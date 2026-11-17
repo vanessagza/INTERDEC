@@ -9,7 +9,7 @@ Verified November 15, 2026 using local Chromium browser emulation. The site rema
 - All four pages (`index.html`, `available-lots.html`, `invest.html`, `careers.html`) in English and Spanish at 320, 390, 768, 1024, and 1440px: no horizontal page overflow or browser exceptions.
 - Exact PDF gold `#C9A24A`, supplied aerial/proposed-plan images, portraits, partner logos, and the downloadable original eight-page PDF load correctly.
 - Countdown includes seconds, updates once per second, and hides the countdown/calendar action after the announced event; no negative values.
-- Company email is `contact@interdecgroup.com`; company phone is `+52 81 1414 5035`. Project sales contacts remain separately labeled.
+- Company email is `info@interdecgroup.com`; company phone is `+52 81 1414 5035`. Project sales contacts remain separately labeled.
 - Residential/commercial project tabs and their translated sizes/pricing work. Homepage inquiry previews, text downloads, calendar downloads, dialogs, and email-app handoff work. Calendar retains `DTSTART:20261202T163000Z` with no invented end time.
 - Available Lots contains all 52 records. Filters return 43 available total, 40 available residential, 9 reserved residential, and 3 commercial. Lot search, no-results state, reset, exceptions, proposed-plan view, keyboard details, and lot-specific email drafts work.
 - Inventory identifies lots 18–26 as reserved in the November 2026 package. Detailed records preserve differences between the inventory table's typical dimensions and certain site-plan area annotations.
@@ -54,3 +54,13 @@ Local Chromium/Playwright checked all four pages in EN/ES at 320, 390, 768, 1024
 Functional browser checks passed 21 groups with no JavaScript exceptions or failed HTTP requests: mobile navigation/Escape/inert behavior; language persistence; home tabs and keyboard controls; project, invitation, privacy and inquiry dialogs; countdown; calendar download with the correct ceremony instant; inquiry drafts/downloads/email-app links; inventory counts, filters, search, reset, empty state and lot details; Invest/Careers drafts; no-JavaScript readability; reduced-motion layout; post-event countdown and calendar hiding. No test messages were sent.
 
 Static checks found no missing local assets/links/anchors, duplicate HTML IDs, or visible unfinished copy placeholders. JavaScript syntax and `git diff --check` pass. Checks used Chromium emulation, not physical devices. Direct GitHub Pages requests remain blocked by environment network policy; publish status is checked through the repository's public Actions page when available.
+
+## Follow-up image, contact, and motion checks — November 17, 2026
+
+- Company email and all fallbacks, privacy text, no-JavaScript text, and inquiry links changed to `info@interdecgroup.com`; no old address remains in active HTML/JS/docs.
+- Home ribbon now immediately follows the company intro and precedes projects. Desktop menu gaps increased with no header collision at the desktop breakpoint.
+- Home hero image now pans visibly with the pointer and has stronger lighting; the featured project image has stronger tilt and zoom. Reduced-motion, mobile touch, and wide touch disable these effects.
+- All three subpages use new photo backgrounds and matching image preloads. Careers puts the couple on the right; Available Lots removes street names and annotations from the decorative plan backdrop.
+- Invest displays the separately enhanced wide aerial with less sky and no letterboxing. Its Top Texas Title mark is visible. Mobile investment statistics now stack to avoid crowding.
+
+The repeated 21-group functionality suite passes with no JavaScript exceptions or failed requests. Extra checks confirm all new hero assets return HTTP200, matching preloads, decoded project imagery, ribbon order, pointer-driven transforms, stronger featured-image tilt, and motion disabled for reduced-motion and both narrow/wide touch. CSS checks cover72 page/viewport/language combinations, including widths320,390,768,1100,1101,1152,1280,1440,1920 in English and Spanish. Desktop and phone screenshots were visually checked for text readability, photo composition, statistics spacing, and image framing. Syntax and diff checks pass. No test messages sent.

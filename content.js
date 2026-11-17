@@ -5,7 +5,7 @@ window.INTERDEC = {
     name: 'INTERDEC',
     legalName: 'INTERNATIONAL TERRA DEVELOPING CORP, LLC',
     domain: 'interdecgroup.com',
-    email: 'contact@interdecgroup.com', // Supplied company contact; mail drafts use the visitor's email app.
+    email: 'info@interdecgroup.com', // Supplied company contact; mail drafts use the visitor's email app.
     phone: '+528114145035', // Company contact supplied by Vanessa; distinct from project sales.
     phoneDisplay: '+52 81 1414 5035',
     officeAddress: '',

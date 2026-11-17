@@ -35,7 +35,7 @@
   let precisionAllowed = finePointer.matches;
 
   const enabled = () => motionAllowed && !document.hidden;
-  const parallaxEnabled = () => enabled() && desktopAllowed;
+  const parallaxEnabled = () => enabled() && desktopAllowed && precisionAllowed;
   const pointerEnabled = () => parallaxEnabled() && precisionAllowed;
 
   function render() {
@@ -47,6 +47,9 @@
     hero.style.setProperty('--hero-shift', `${shift.toFixed(2)}px`);
     hero.style.setProperty('--pointer-x', `${pointerX.toFixed(2)}%`);
     hero.style.setProperty('--pointer-y', `${pointerY.toFixed(2)}%`);
+    // Move the image itself as well as the light so the depth follows the pointer.
+    hero.style.setProperty('--hero-pointer-x', `${((50 - pointerX) * .48).toFixed(2)}px`);
+    hero.style.setProperty('--hero-pointer-y', `${((50 - pointerY) * .28).toFixed(2)}px`);
     if (Math.abs(targetShift - shift) > 0.1 || Math.abs(targetX - pointerX) > 0.08 || Math.abs(targetY - pointerY) > 0.08) {
       frame = requestAnimationFrame(render);
     }
@@ -117,8 +120,8 @@
       const bounds = visual.getBoundingClientRect();
       const x = (event.clientX - bounds.left) / bounds.width;
       const y = (event.clientY - bounds.top) / bounds.height;
-      visual.style.setProperty('--tilt-x', `${((0.5 - y) * 3).toFixed(2)}deg`);
-      visual.style.setProperty('--tilt-y', `${((x - 0.5) * 3).toFixed(2)}deg`);
+      visual.style.setProperty('--tilt-x', `${((0.5 - y) * 10).toFixed(2)}deg`);
+      visual.style.setProperty('--tilt-y', `${((x - 0.5) * 10).toFixed(2)}deg`);
       visual.style.setProperty('--visual-x', `${(x * 100).toFixed(2)}%`);
       visual.style.setProperty('--visual-y', `${(y * 100).toFixed(2)}%`);
     }, { passive: true });
@@ -176,7 +179,7 @@
       shift = targetShift = 0;
       pointerX = targetX = 68;
       pointerY = targetY = 44;
-      ['--hero-shift', '--hero-progress', '--pointer-x', '--pointer-y'].forEach(property => hero.style.removeProperty(property));
+      ['--hero-shift', '--hero-progress', '--pointer-x', '--pointer-y', '--hero-pointer-x', '--hero-pointer-y'].forEach(property => hero.style.removeProperty(property));
     }
     if (panelAnimation && !motionAllowed) panelAnimation.cancel();
     onScroll();

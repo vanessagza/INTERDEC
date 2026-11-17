@@ -2,7 +2,7 @@
 
 ## Company-supplied information
 
-Vanessa supplied INTERDEC's short name, legal name **INTERNATIONAL TERRA DEVELOPING CORP, LLC**, Texas business activities, intended domain `interdecgroup.com`, company email **contact@interdecgroup.com**, and company phone **+52 81 1414 5035**.
+Vanessa supplied INTERDEC's short name, legal name **INTERNATIONAL TERRA DEVELOPING CORP, LLC**, Texas business activities, intended domain `interdecgroup.com`, company email **info@interdecgroup.com**, and company phone **+52 81 1414 5035**.
 
 Company history, office address, ownership percentages, job vacancies, employment terms, and investment returns have not been supplied and must not be invented.
 
@@ -86,3 +86,12 @@ The website now displays `assets/images/allen-lozano-hd.webp`, `francisco-velasc
 Header navigation uses the supplied transparent white INTERDEC mark; the footer, sponsors, and credits use the supplied transparent navy/gray mark. The beige-backed initial JPEG is no longer displayed as the website logo. Sponsor and credit marks sit on white; the white Top Texas Title mark receives a navy CSS color treatment so its exact silhouette remains readable. Brand geometry is unchanged.
 
 The bilingual company story is newly written mission copy approved in scope by Vanessa's November 17 request. It does not assert a founding date, founder biography, measured outcomes, or unprovided historical events.
+
+## Page imagery and interaction update — November 17, 2026
+
+- `assets/images/lots-hero-cinematic.webp` (1672 × 941): AI-edited cinematic version of the supplied `package/puerta-del-sol-site-plan.jpeg`. Street names, lot numbers, dimensions, and other text were removed from the decorative hero; parcel outlines were retained as a visual concept. Do not use this generated backdrop for measurements or lot selection. The original labeled plan and inventory remain available below and in the unchanged package PDF.
+- `assets/images/invest-project-hd.webp` (1672 × 941): AI-enhanced recreation of the supplied aerial proposed-plan photograph, with reduced sky and a wider composition. It is labeled as an enhanced concept on Invest. The original supplied aerial remains on Home and in the package. Generative details can differ.
+- `assets/images/invest-hero-sunset.webp` (1672 × 941): generated website adaptation based on Vanessa's supplied sunset-city photograph in the November 17 follow-up. Used decoratively, without claiming this is Puerta del Sol or a verified specific location.
+- `assets/images/careers-hero.webp` (1536 × 1024): AI-edited adaptation of Vanessa's supplied realtor-and-couple photo. Horizontally mirrored composition puts the couple on the right and leaves reading space on the left. This is decorative careers imagery, not an identification of INTERDEC employees or customers.
+
+All four derivative assets are encoded as WebP at quality 88. The company contact was changed to **info@interdecgroup.com** at Vanessa's request.
