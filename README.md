@@ -19,7 +19,7 @@ The site uses INTERDEC's navy identity and **`#C9A24A` gold**, sampled directly 
 | `index.html` | Home page, project overview, nearby amenities, project team, event, FAQ, and contact section |
 | `available-lots.html` | Filterable lot inventory and supplied proposed site plan |
 | `invest.html` | Builder/lot program, launch pricing, financing example, and project inquiry |
-| `careers.html` | Careers introduction and expression-of-interest inquiry; no unconfirmed vacancies are advertised |
+| `careers.html` | Evergreen invitation to connect professionally with INTERDEC and introduce your background |
 | `content.js` | Company contacts, project overview settings, pricing descriptions, event date, and source package path |
 | `app.js` | Home-page language switching, tabs, countdown, dialogs, calendar, and inquiry drafts |
 | `effects.js` | Optional scroll and pointer enhancements on the home page |
@@ -39,7 +39,7 @@ The site uses INTERDEC's navy identity and **`#C9A24A` gold**, sampled directly 
 
 Vanessa supplied **info@interdecgroup.com** and **+52 81 1414 5035** as INTERDEC's company contacts. The phone's machine-readable form is `+528114145035`. The project sales team's US phone numbers remain separately labeled.
 
-Start with `content.js` when updating company details. Preserve quotation marks and commas. The home page includes an English/Spanish company story centered on its purpose and values, without unverified founder details or dates. `company.story` and `company.storyEs` optionally replace its opening paragraph. The office address is not yet supplied; visitors are invited to contact the team to arrange a visit.
+Start with `content.js` when updating company details. Preserve quotation marks and commas. The home page includes an English/Spanish company story centered on its purpose and values, without unverified founder details or dates. `company.story` and `company.storyEs` optionally replace its opening paragraph.
 
 For page copy, edit the English text and its matching `data-es` Spanish attribute. Some facts repeat across pages; when changing prices, inventory, terms, or event information, review all affected pages and both languages. Keep existing IDs and control attributes intact.
 
@@ -62,7 +62,7 @@ The home hero uses a sharper AI-regenerated aerial concept based on the supplied
 
 ## Contact and careers forms
 
-Forms prepare a local draft for review, download, or opening in the visitor's email application. They do **not** silently submit data, deliver email automatically, store applications, or reserve a lot. The visitor sends the message from their own email application to the configured company address. Careers accepts expressions of interest without inventing open positions or employment terms.
+Forms prepare a local draft for review, download, or opening in the visitor's email application. They do **not** silently submit data, deliver email automatically, store applications, or reserve a lot. The visitor sends the message from their own email application to the configured company address. Careers offers an evergreen invitation for professional introductions, with no implication of active recruitment or a promised response.
 
 Automatic submission would require a separate form service or backend integration, followed by updated privacy wording and delivery/error testing. Never put private email-service keys in browser JavaScript.
 
@@ -97,12 +97,8 @@ Company contact links and all inquiry fallbacks use `info@interdecgroup.com`. Th
 
 Available Lots, Invest, and Careers preload their own cinematic photo backgrounds. The Careers background places the couple on the right. Invest uses a separate enhanced aerial in a wide image frame; Top Texas Title's white source mark is darkened on its white partner card. See `ASSET-SOURCES.md` for derivative-image provenance.
 
-## Remaining company information
+## Content upkeep
 
-There are no visible unfinished content placeholders. The following details are handled with general wording until supplied:
+The current pages contain complete, intentional copy. Commercial lot prices are provided directly by the project sales team. Careers invites professional introductions and connections with INTERDEC.
 
-- Office address and, if desired, visiting hours. Current copy asks visitors to contact the team to arrange a visit.
-- Commercial lot prices, ideally separate prices and terms for lots 50, 51, and 52. Current copy directs buyers to the sales team.
-- Specific vacancies, role requirements, location/work arrangement, and application deadlines if actively recruiting. Careers currently accepts general expressions of interest.
-
-Optional additions include the founder's name, founding year, and factual company milestones to personalize the existing mission story; and a company-authored privacy policy if one exists. The current story and website privacy explanation are complete and usable.
+Useful future improvements include direct form delivery, so visitors can send an inquiry without opening an email app, and a regular inventory update process to keep lot availability and program capacity current.

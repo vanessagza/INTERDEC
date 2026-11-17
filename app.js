@@ -16,7 +16,7 @@
       residential: { heading: 'Places to put down roots.', caption: 'Planned residential lots' },
       commercial: { heading: 'Space for your next venture.', caption: 'Planned commercial lots' },
       size: '[Details coming soon]', price: '[To be announced]',
-      email: '[Add company email]', phone: '[Add company phone]', address: 'Contact our team to arrange a visit.',
+      email: '[Add company email]', phone: '[Add company phone]',
       inquiryUnavailable: 'Your draft is ready. The company email is still a placeholder, so nothing has been sent. Copy or download the message and share it with your contact.',
       inquiryReady: 'Your draft is ready. Review it below, then open your email app to send it. Nothing has been sent yet.',
       copied: 'Message copied. Nothing has been sent.',
@@ -31,7 +31,7 @@
       residential: { heading: 'Un lugar para echar raíces.', caption: 'Lotes residenciales planeados' },
       commercial: { heading: 'Espacio para tu próximo negocio.', caption: 'Lotes comerciales planeados' },
       size: '[Información próximamente]', price: '[Por anunciar]',
-      email: '[Agrega el correo de la empresa]', phone: '[Agrega el teléfono de la empresa]', address: 'Contacta a nuestro equipo para coordinar una visita.',
+      email: '[Agrega el correo de la empresa]', phone: '[Agrega el teléfono de la empresa]',
       inquiryUnavailable: 'Tu borrador está listo. El correo de la empresa aún está pendiente, así que no se ha enviado nada. Copia o descarga el mensaje y compártelo con tu contacto.',
       inquiryReady: 'Tu borrador está listo. Revísalo y abre tu aplicación de correo para enviarlo. Todavía no se ha enviado nada.',
       copied: 'Mensaje copiado. No se ha enviado nada.',
@@ -69,8 +69,6 @@
     const safeEmail = /^[^\s@<>]+@[^\s@<>]+\.[^\s@<>]+$/.test(company.email || '') ? company.email : '';
     setContact($('#company-email'), safeEmail, t.email, safeEmail ? `mailto:${safeEmail}` : '');
     setContact($('#company-phone'), company.phoneDisplay || company.phone, t.phone, company.phone ? `tel:${company.phone.replace(/[^+\d]/g, '')}` : '');
-    $('#company-address').textContent = company.officeAddress || t.address;
-    $('#company-address-label').textContent = company.officeAddress ? (language === 'en' ? 'OFFICE' : 'OFICINA') : (language === 'en' ? 'VISITS' : 'VISITAS');
     $('#project-phone').setAttribute('href', `tel:${config.project.inquiryPhone.replace(/[^+\d]/g, '')}`);
     $('#project-phone').firstChild.textContent = `${config.project.inquiryPhoneDisplay} `;
   }

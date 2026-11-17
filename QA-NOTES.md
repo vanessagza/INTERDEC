@@ -72,3 +72,11 @@ The repeated 21-group functionality suite passes with no JavaScript exceptions o
 - Audited all company copy: no visible unfinished content placeholders remain. The office address, commercial lot prices, and specific career openings still use general substitute wording. Optional factual history and a company-authored privacy policy can be added later. The current mission story and site-practices privacy explanation are complete.
 
 Verified24 menu combinations (all4pages in English/Spanish at320×568,390×844,667×375): all links fit without internal menu scrolling, no arrows, no browser exceptions, and toggle/Escape/outside-tap/desktop-resize dismissal restores the page's interaction. Screenshots confirm compact glass styling. Browser checks confirm continuous ribbon movement while scrollY is unchanged, equal repeat-group widths/content, a seamless one-group loop, offscreen pause, and reduced-motion animation disabled. JavaScript syntax and diff checks pass.
+
+## Consistent navigation and final content cleanup — November 17, 2026
+
+All four mobile menus now contain the same seven links and bilingual labels: Projects, Our approach, The company, Available lots, Invest, Careers, and Get in touch. Home-section links from secondary pages explicitly target `index.html#…`; the current secondary page is marked with `aria-current`. Navigation opens with a subtle260ms fade/slide/scale entrance, disabled for reduced-motion preferences.
+
+Removed the office/visits block and unused office configuration/rendering. Careers now offers a complete invitation to connect professionally without the no-vacancies/general-interest disclaimer or unprovided job requirements. Its existing form and email-draft/download behavior remain intact.
+
+Targeted Chromium checks passed24 mobile combinations (four pages × English/Spanish ×320×568,390×844,667×375): identical seven-link labels and correct destinations, all items fit without menu scrolling, Escape/outside-tap/desktop-resize restores page interaction, entrance animation restarts on reopening, and reduced-motion disables animation. Home's office/visits block is absent. Careers inquiry preview, company email link and text download pass at all three sizes. No browser exceptions. Static asset/link/fragment/unique-ID checks, JavaScript syntax, and diff checks pass.

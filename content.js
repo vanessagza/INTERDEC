@@ -1,4 +1,4 @@
-/* INTERDEC website settings. Empty office/story fields use the page defaults.
+/* INTERDEC website settings. Empty story overrides preserve the authored page copy.
    No build tools, secret keys, accounts, or paid services are required. */
 window.INTERDEC = {
   company: {
@@ -8,7 +8,6 @@ window.INTERDEC = {
     email: 'info@interdecgroup.com', // Supplied company contact; mail drafts use the visitor's email app.
     phone: '+528114145035', // Company contact supplied by Vanessa; distinct from project sales.
     phoneDisplay: '+52 81 1414 5035',
-    officeAddress: '',
     // Optional replacement for the first paragraph of the company story.
     story: '',
     storyEs: '',

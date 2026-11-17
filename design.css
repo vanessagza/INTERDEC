@@ -825,6 +825,14 @@ html[lang=es] .hero h1 { font-size: clamp(70px, 7.3vw, 128px); }
   backdrop-filter: blur(24px) saturate(135%);
   -webkit-backdrop-filter: blur(24px) saturate(135%);
 }
+.mobile-nav:not([hidden]) {
+  transform-origin: calc(100% - 30px) top;
+  animation: menuReveal 260ms var(--ease-out) both;
+}
+@keyframes menuReveal {
+  from { opacity: 0; transform: translateY(-8px) scale(.98); }
+  to { opacity: 1; transform: none; }
+}
 .mobile-nav a {
   display: flex;
   align-items: center;
@@ -886,5 +894,6 @@ html[lang=es] .hero h1 { font-size: clamp(70px, 7.3vw, 128px); }
 .type-ribbon.is-paused .type-ribbon-track { animation-play-state: paused; }
 @keyframes ribbonDrift { from { transform: translateX(0); } to { transform: translateX(-25%); } }
 @media (prefers-reduced-motion: reduce) {
+  .mobile-nav:not([hidden]) { animation: none; opacity: 1; transform: none; }
   .type-ribbon-track { animation: none; transform: none; will-change: auto; }
 }
