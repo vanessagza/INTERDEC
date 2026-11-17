@@ -9,7 +9,8 @@ window.INTERDEC = {
     phone: '+528114145035', // Company contact supplied by Vanessa; distinct from project sales.
     phoneDisplay: '+52 81 1414 5035',
     officeAddress: '',
-    story: '', // Optional company story; replaces the visible story placeholder.
+    // Optional replacement for the first paragraph of the company story.
+    story: '',
     storyEs: '',
   },
   project: {

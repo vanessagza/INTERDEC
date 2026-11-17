@@ -35,11 +35,11 @@ The site uses INTERDEC's navy identity and **`#C9A24A` gold**, sampled directly 
 | `ASSET-SOURCES.md` | Image provenance and factual sources |
 | `QA-NOTES.md` | Validation notes and limitations |
 
-## Company contacts and remaining placeholders
+## Company contacts and story
 
 Vanessa supplied **contact@interdecgroup.com** and **+52 81 1414 5035** as INTERDEC's company contacts. The phone's machine-readable form is `+528114145035`. The project sales team's US phone numbers remain separately labeled.
 
-Start with `content.js` when updating company details. Preserve quotation marks and commas. The company history/story and office address remain placeholders because that information has not been provided. `company.storyEs` can hold the Spanish story; otherwise the English story is reused in both languages.
+Start with `content.js` when updating company details. Preserve quotation marks and commas. The home page includes an English/Spanish company story centered on its purpose and values, without unverified founder details or dates. `company.story` and `company.storyEs` optionally replace its opening paragraph. The office address is not yet supplied; visitors are invited to contact the team to arrange a visit.
 
 For page copy, edit the English text and its matching `data-es` Spanish attribute. Some facts repeat across pages; when changing prices, inventory, terms, or event information, review all affected pages and both languages. Keep existing IDs and control attributes intact.
 
@@ -83,6 +83,10 @@ The site retains keyboard controls, labeled forms, native dialogs, reduced-motio
 
 Language preference can be stored locally in the browser. There are no analytics scripts, embedded maps, third-party font requests, or advertising cookies. Maps open when a visitor follows a directions link. Review the company privacy text before final launch and update it if integrations change.
 
-## Readability refinements
+## Readability and visual refinements
 
-Small labels, navigation, captions, and supporting text have been increased to a minimum of 12px; former 12–13px supporting copy is now 14px. Existing text at 14px and above, including display headings and large numbers, retains its original size. Navigation is unnumbered on desktop and mobile. Responsive spacing accommodates the larger supporting text.
+Navigation, labels, captions, and notes use a 14px minimum. Supporting copy uses 16–18px, and form controls use at least 16px. Decorative section/process numbering has been removed; real lot identifiers, dates, counts, and financial figures remain. The hero uses content-led grid rows to keep its actions, featured project, and scroll prompt separated across languages and viewport sizes.
+
+The transparent navy navigation darkens on scroll and uses the supplied transparent white INTERDEC logo. The footer uses the supplied transparent dark mark. Sponsors and project credits sit on white; the company story uses blue. Top Texas Title's supplied white mark receives a navy CSS treatment for readability.
+
+The realtor cards display separate 1254 × 1254 AI-enhanced WebP portraits. The enhancement requests prioritized preserving facial identity and composition; small generative differences can remain. The supplied originals and PDF are retained unchanged. See `ASSET-SOURCES.md`.

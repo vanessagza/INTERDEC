@@ -36,7 +36,7 @@
         && (status.value === 'all' || status.value === lot.status)
         && (!term || requestedNumber === lot.number);
       lot.card.closest('.lots-item').hidden = !visible;
-      lot.card.setAttribute('aria-label', text(`Lot ${String(lot.number).padStart(2, '0')}, ${typeLabel(lot)}, ${statusLabel(lot)} in the November 2026 package. View details.`, `Lote ${String(lot.number).padStart(2, '0')}, ${typeLabel(lot)}, ${statusLabel(lot)} en el paquete de noviembre de 2026. Ver detalles.`));
+      lot.card.setAttribute('aria-label', text(`Lot ${String(lot.number)}, ${typeLabel(lot)}, ${statusLabel(lot)} in the November 2026 package. View details.`, `Lote ${String(lot.number)}, ${typeLabel(lot)}, ${statusLabel(lot)} en el paquete de noviembre de 2026. Ver detalles.`));
       if (visible) count++;
     });
     results.textContent = text(`${count} of 52 lots`, `${count} lotes de 52`);
@@ -45,7 +45,7 @@
 
   function populateDetails(lot) {
     selectedLot = lot;
-    document.querySelector('#lot-dialog-title').textContent = text('Lot ', 'Lote ') + String(lot.number).padStart(2, '0');
+    document.querySelector('#lot-dialog-title').textContent = text('Lot ', 'Lote ') + String(lot.number);
     const label = document.querySelector('#detail-status');
     label.textContent = `${statusLabel(lot)} · ${text('November 2026', 'Noviembre de 2026')}`;
     label.className = `lot-status ${lot.status}`;

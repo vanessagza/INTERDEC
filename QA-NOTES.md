@@ -36,3 +36,21 @@ Checks used Chromium emulation, not physical devices or other browser engines. D
 - Layout checks show no horizontal page overflow or hero control/card collisions; mobile and tablet spacing accommodates the larger copy and captions.
 - The home hero now uses `puerta-del-sol-hero-hd.webp`, a sharper 1536 × 1024 AI-regenerated concept based on the supplied aerial, encoded as WebP without resizing. The preload matches the displayed asset. It is not an exact photographic restoration; detailed features and proposed lot outlines can differ. Original project/plan images remain unchanged.
 - Home countdown, contacts, bilingual lot values, inquiry drafts/downloads, calendar, filters/details, subpage draft forms, navigation, language persistence, no-JavaScript reading, links, assets, and `/INTERDEC/` subpath checks passed after the update. No browser exceptions or failed asset requests were observed.
+
+## Full visual and functional check — November 17, 2026
+
+- Fixed the hero action/scroll-prompt overlap by placing content, project card, and bottom controls in separate grid rows/columns instead of competing absolute positions.
+- Replaced the white navigation rectangle with a full-width translucent navy header that darkens on scroll. Switched header/footer to the supplied transparent logos, removing the beige-backed website mark.
+- Removed decorative numbering; retained factual lot identifiers, counts, prices, and dates. Raised small text to at least 14px and supporting copy to 16–18px.
+- Sponsors and project credits now sit on white, with all six sponsor marks visible, including a navy treatment of the white Top Texas Title mark. The mission/story section is blue.
+- Added three 1254 × 1254 AI-enhanced realtor portraits as separate WebP assets, keeping supplied originals and the package unchanged.
+- Replaced the company-story placeholder with bilingual mission copy, the office placeholder with visit-arrangement guidance, and the privacy placeholder with company contact information.
+- Fixed Spanish countdown overflow at 320px and launch-fact intrinsic grid overflow. Aligned mobile-menu resize breakpoints with the desktop navigation; corrected the home menu's language-change accessible label.
+
+### Verified
+
+Local Chromium/Playwright checked all four pages in EN/ES at 320, 390, 768, 1024, 1280, 1440, and 1920px (56 combinations). No horizontal page overflow, header collisions, or hero action/project-card/scroll-prompt collisions were found. Desktop and phone screenshots were visually inspected, including sponsor logos, project credits, and the blue story.
+
+Functional browser checks passed 21 groups with no JavaScript exceptions or failed HTTP requests: mobile navigation/Escape/inert behavior; language persistence; home tabs and keyboard controls; project, invitation, privacy and inquiry dialogs; countdown; calendar download with the correct ceremony instant; inquiry drafts/downloads/email-app links; inventory counts, filters, search, reset, empty state and lot details; Invest/Careers drafts; no-JavaScript readability; reduced-motion layout; post-event countdown and calendar hiding. No test messages were sent.
+
+Static checks found no missing local assets/links/anchors, duplicate HTML IDs, or visible unfinished copy placeholders. JavaScript syntax and `git diff --check` pass. Checks used Chromium emulation, not physical devices. Direct GitHub Pages requests remain blocked by environment network policy; publish status is checked through the repository's public Actions page when available.

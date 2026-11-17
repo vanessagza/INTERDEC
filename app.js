@@ -16,7 +16,7 @@
       residential: { heading: 'Places to put down roots.', caption: 'Planned residential lots' },
       commercial: { heading: 'Space for your next venture.', caption: 'Planned commercial lots' },
       size: '[Details coming soon]', price: '[To be announced]',
-      email: '[Add company email]', phone: '[Add company phone]', address: '[Add office address]',
+      email: '[Add company email]', phone: '[Add company phone]', address: 'Contact our team to arrange a visit.',
       inquiryUnavailable: 'Your draft is ready. The company email is still a placeholder, so nothing has been sent. Copy or download the message and share it with your contact.',
       inquiryReady: 'Your draft is ready. Review it below, then open your email app to send it. Nothing has been sent yet.',
       copied: 'Message copied. Nothing has been sent.',
@@ -31,7 +31,7 @@
       residential: { heading: 'Un lugar para echar raíces.', caption: 'Lotes residenciales planeados' },
       commercial: { heading: 'Espacio para tu próximo negocio.', caption: 'Lotes comerciales planeados' },
       size: '[Información próximamente]', price: '[Por anunciar]',
-      email: '[Agrega el correo de la empresa]', phone: '[Agrega el teléfono de la empresa]', address: '[Agrega la dirección de la oficina]',
+      email: '[Agrega el correo de la empresa]', phone: '[Agrega el teléfono de la empresa]', address: 'Contacta a nuestro equipo para coordinar una visita.',
       inquiryUnavailable: 'Tu borrador está listo. El correo de la empresa aún está pendiente, así que no se ha enviado nada. Copia o descarga el mensaje y compártelo con tu contacto.',
       inquiryReady: 'Tu borrador está listo. Revísalo y abre tu aplicación de correo para enviarlo. Todavía no se ha enviado nada.',
       copied: 'Mensaje copiado. No se ha enviado nada.',
@@ -48,7 +48,6 @@
   if (config.company.story) {
     $('#company-story').textContent = config.company.story;
     $('#company-story').dataset.es = config.company.storyEs || config.company.story;
-    $('.story-placeholder-label').hidden = true;
   }
   if (config.project.partnership) {
     $('#partnership-copy').textContent = config.project.partnership;
@@ -70,7 +69,8 @@
     const safeEmail = /^[^\s@<>]+@[^\s@<>]+\.[^\s@<>]+$/.test(company.email || '') ? company.email : '';
     setContact($('#company-email'), safeEmail, t.email, safeEmail ? `mailto:${safeEmail}` : '');
     setContact($('#company-phone'), company.phoneDisplay || company.phone, t.phone, company.phone ? `tel:${company.phone.replace(/[^+\d]/g, '')}` : '');
-    setContact($('#company-address'), company.officeAddress, t.address);
+    $('#company-address').textContent = company.officeAddress || t.address;
+    $('#company-address-label').textContent = company.officeAddress ? (language === 'en' ? 'OFFICE' : 'OFICINA') : (language === 'en' ? 'VISITS' : 'VISITAS');
     $('#project-phone').setAttribute('href', `tel:${config.project.inquiryPhone.replace(/[^+\d]/g, '')}`);
     $('#project-phone').firstChild.textContent = `${config.project.inquiryPhoneDisplay} `;
   }
@@ -79,7 +79,7 @@
     const t = copy[language];
     const type = selectedLotType;
     const count = config.project[`${type}Lots`];
-    $('#lot-count').textContent = String(count).padStart(2, '0');
+    $('#lot-count').textContent = String(count);
     $('#lot-heading').textContent = t[type].heading;
     $('#lot-caption').textContent = t[type].caption;
     $('#lot-size').textContent = config.project[`${type}Size${language === 'es' ? 'Es' : ''}`] || config.project[`${type}Size`] || t.size;
@@ -102,7 +102,8 @@
     $('.language-en').classList.toggle('active', language === 'en');
     $('.language-es').classList.toggle('active', language === 'es');
     $('.language-toggle').setAttribute('aria-label', language === 'en' ? 'Switch to Spanish' : 'Cambiar a inglés');
-    $('.menu-toggle').setAttribute('aria-label', language === 'en' ? 'Open navigation' : 'Abrir navegación');
+    const menuOpen = $('.menu-toggle').getAttribute('aria-expanded') === 'true';
+    $('.menu-toggle').setAttribute('aria-label', language === 'en' ? (menuOpen ? 'Close navigation' : 'Open navigation') : (menuOpen ? 'Cerrar navegación' : 'Abrir navegación'));
     renderLotPanel();
     renderContacts();
     updateCountdown();
@@ -146,7 +147,7 @@
   document.addEventListener('keydown', event => {
     if (event.key === 'Escape' && !mobileMenu.hidden) { closeMenu(); menuButton.focus(); }
   });
-  const desktopMedia = matchMedia('(min-width:701px)');
+  const desktopMedia = matchMedia('(min-width:1101px)');
   desktopMedia.addEventListener('change', event => { if (event.matches) closeMenu(); });
 
   // Native dialogs supply keyboard focus containment and Escape-to-close.

@@ -16,7 +16,7 @@ Company history, office address, ownership percentages, job vacancies, employmen
 
 `assets/documents/puerta-del-sol-lot-package-nov-2026.pdf` is the original eight-page **Puerta del Sol — Lot & Builder Package, November 2026** supplied by Vanessa. Its internal title is “Puerta del Sol Lot Package.” It is offered unchanged as a visitor download.
 
-The following assets were extracted from embedded PDF images without generative modification. Separate embedded alpha masks were restored for transparent PNG logos. Assets remain at their supplied embedded resolution; CSS controls presentation.
+The following assets were extracted from embedded PDF images without generative modification. Separate embedded alpha masks were restored for transparent PNG logos. These original package assets remain at their supplied embedded resolution; CSS controls presentation. The enhanced website portraits described below are separate files.
 
 | Asset in `assets/images/package/` | PDF source and interpretation |
 | --- | --- |
@@ -78,3 +78,11 @@ The site does not contact Google Fonts at runtime.
 ## Design references
 
 The original brief supplied https://am-utilities-construction.ideads.workers.dev/ and https://maverickcapitaltx.com/ as visual references. Their photos, testimonials, metrics, project claims, contact details, and logos were not copied into INTERDEC's website. Decorative architectural line art is not a site plan.
+
+## Portrait and logo refinements — November 17, 2026
+
+The website now displays `assets/images/allen-lozano-hd.webp`, `francisco-velasco-hd.webp`, and `yahir-galvan-hd.webp`. Each is a 1254 × 1254 AI-enhanced recreation of the corresponding supplied page-8 portrait, encoded as WebP at quality 90. The restoration request prioritized preserving each person's facial identity, expression, pose, clothing, and neutral studio background while reducing blur and compression artifacts. Generative enhancement can introduce small differences; the original portraits remain unchanged in `assets/images/package/` and in the downloadable PDF.
+
+Header navigation uses the supplied transparent white INTERDEC mark; the footer, sponsors, and credits use the supplied transparent navy/gray mark. The beige-backed initial JPEG is no longer displayed as the website logo. Sponsor and credit marks sit on white; the white Top Texas Title mark receives a navy CSS color treatment so its exact silhouette remains readable. Brand geometry is unchanged.
+
+The bilingual company story is newly written mission copy approved in scope by Vanessa's November 17 request. It does not assert a founding date, founder biography, measured outcomes, or unprovided historical events.

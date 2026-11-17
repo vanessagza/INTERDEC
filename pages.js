@@ -57,7 +57,7 @@
   document.addEventListener('keydown', event => {
     if (event.key === 'Escape' && menu && !menu.hidden) { closeMenu(); menuButton.focus(); }
   });
-  matchMedia('(min-width:1001px)').addEventListener('change', event => { if (event.matches) closeMenu(); });
+  matchMedia('(min-width:1101px)').addEventListener('change', event => { if (event.matches) closeMenu(); });
 
   $$('[data-company-email]').forEach(element => {
     const email = config.company.email || 'contact@interdecgroup.com';
