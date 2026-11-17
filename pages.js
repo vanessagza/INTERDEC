@@ -14,8 +14,6 @@
   const menuButton = $('.menu-toggle');
   const main = $('main');
   const footer = $('.site-footer');
-  let draft = '';
-  let subject = '';
 
   let menuCloseTimer;
   function closeMenu(immediate = false) {
@@ -96,42 +94,6 @@
     element.href = `tel:${(config.company.phone || '+528114145035').replace(/[^+\d]/g, '')}`;
   });
 
-  // Prepare a local email draft. Only the visitor's email app can send it.
-  $$('.interest-form').forEach(form => form.addEventListener('submit', event => {
-    event.preventDefault();
-    if (!form.reportValidity()) return;
-    const values = new FormData(form);
-    const es = language === 'es';
-    const entries = [];
-    let empty;
-    [...form.elements].filter(element => element.name && element.type !== 'submit').forEach(element => {
-      const value = String(values.get(element.name) || '').trim();
-      if (element.required && !value && !empty) empty = element;
-      const label = es ? element.dataset.labelEs : element.dataset.labelEn;
-      if (label && value) entries.push(`${label}: ${value}`);
-    });
-    if (empty) {
-      empty.setCustomValidity(es ? 'Escribe más que espacios.' : 'Please enter more than spaces.');
-      empty.reportValidity();
-      empty.addEventListener('input', () => empty.setCustomValidity(''), { once: true });
-      return;
-    }
-    subject = es ? form.dataset.subjectEs : form.dataset.subjectEn;
-    draft = `${subject}\n\n${entries.join('\n\n')}`;
-    const dialog = $('#message-dialog');
-    $('#message-preview').textContent = draft;
-    $('#open-email').href = `mailto:${config.company.email || 'info@interdecgroup.com'}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(draft)}`;
-    if (!dialog.open) dialog.showModal();
-  }));
-  $$('[data-close]').forEach(button => button.addEventListener('click', () => button.closest('dialog').close()));
-  $('#download-message')?.addEventListener('click', () => {
-    const url = URL.createObjectURL(new Blob([draft], { type: 'text/plain;charset=utf-8' }));
-    const link = document.createElement('a');
-    link.href = url; link.download = 'INTERDEC-Inquiry.txt';
-    document.body.appendChild(link); link.click(); link.remove();
-    setTimeout(() => URL.revokeObjectURL(url), 10000);
-  });
-  $$('.interest-form button[type=submit]').forEach(button => { button.disabled = false; });
   let frame;
   function onScroll() {
     if (frame) return;

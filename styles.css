@@ -248,6 +248,13 @@ a.contact-value[href]:hover{color:var(--gold)}
 .form-field textarea{min-height:90px}
 .form-submit{width:100%;margin-top:2px}
 .form-note{font-size:14px;line-height:1.8;color:#98adbc;margin:14px 0 0}
+.form-status{margin:16px 0 0;padding:14px 16px;border:1px solid #ffffff2b;border-radius:8px;font-size:16px;line-height:1.7;overflow-wrap:anywhere}
+.form-status:empty{display:none}
+.form-status[data-state=sending]{color:#d6e4ed;background:#ffffff08;border-color:#ffffff2b}
+.form-status[data-state=success]{color:#c0f4d6;background:#49b97c15;border-color:#84d9aa66}
+.form-status[data-state=error]{color:#ffd2d2;background:#ed747415;border-color:#f49a9a66}
+.form-status a{color:inherit;text-decoration:underline;text-underline-offset:3px}
+form[aria-busy=true] button[type=submit]{cursor:progress;opacity:.8}
 .site-footer{padding:48px var(--page-pad) 28px}
 .footer-top{display:flex;align-items:center;justify-content:space-between;gap:30px;border-bottom:1px solid var(--line);padding-bottom:28px}
 .footer-brand{width:170px}

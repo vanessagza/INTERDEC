@@ -8,8 +8,6 @@
   const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
   let language = 'en';
   let selectedLotType = 'residential';
-  let inquiryText = '';
-  let inquirySubject = '';
   let toastTimer;
   const copy = {
     en: {
@@ -17,30 +15,16 @@
       commercial: { heading: 'Space for your next venture.', caption: 'Planned commercial lots' },
       size: '[Details coming soon]', price: '[To be announced]',
       email: '[Add company email]', phone: '[Add company phone]',
-      inquiryUnavailable: 'Your draft is ready. The company email is still a placeholder, so nothing has been sent. Copy or download the message and share it with your contact.',
-      inquiryReady: 'Your draft is ready. Review it below, then open your email app to send it. Nothing has been sent yet.',
-      copied: 'Message copied. Nothing has been sent.',
-      copyFailed: 'Clipboard access is unavailable. Download the text instead.',
       calendar: 'Calendar invitation downloaded.',
-      downloaded: 'Inquiry downloaded. Nothing has been sent.',
       pastEvent: 'ANNOUNCED GROUNDBREAKING · DECEMBER 2, 2026',
-      interest: { residential: 'Residential lots — Puerta del Sol', commercial: 'Commercial lots — Puerta del Sol', land: 'I have land to sell', general: 'General information' },
-      draftTitle: 'INTERDEC — Website inquiry', name: 'Name', emailLabel: 'Email', phoneLabel: 'Phone', interestLabel: 'Interest', message: 'Message', notProvided: 'Not provided',
     },
     es: {
       residential: { heading: 'Un lugar para echar raíces.', caption: 'Lotes residenciales planeados' },
       commercial: { heading: 'Espacio para tu próximo negocio.', caption: 'Lotes comerciales planeados' },
       size: '[Información próximamente]', price: '[Por anunciar]',
       email: '[Agrega el correo de la empresa]', phone: '[Agrega el teléfono de la empresa]',
-      inquiryUnavailable: 'Tu borrador está listo. El correo de la empresa aún está pendiente, así que no se ha enviado nada. Copia o descarga el mensaje y compártelo con tu contacto.',
-      inquiryReady: 'Tu borrador está listo. Revísalo y abre tu aplicación de correo para enviarlo. Todavía no se ha enviado nada.',
-      copied: 'Mensaje copiado. No se ha enviado nada.',
-      copyFailed: 'El portapapeles no está disponible. Descarga el texto.',
       calendar: 'Invitación de calendario descargada.',
-      downloaded: 'Consulta descargada. No se ha enviado nada.',
       pastEvent: 'INICIO DE OBRA ANUNCIADO · 2 DE DICIEMBRE DE 2026',
-      interest: { residential: 'Lotes residenciales — Puerta del Sol', commercial: 'Lotes comerciales — Puerta del Sol', land: 'Tengo un terreno para vender', general: 'Información general' },
-      draftTitle: 'INTERDEC — Consulta desde el sitio web', name: 'Nombre', emailLabel: 'Correo', phoneLabel: 'Teléfono', interestLabel: 'Interés', message: 'Mensaje', notProvided: 'No indicado',
     },
   };
 
@@ -105,6 +89,7 @@
     renderLotPanel();
     renderContacts();
     updateCountdown();
+    document.dispatchEvent(new CustomEvent('interdec:language', { detail: { language } }));
     if (persist) { try { localStorage.setItem('interdec-language', language); } catch (_) { /* Private browsing: English remains the default. */ } }
   }
 
@@ -265,50 +250,6 @@
   }
   setInterval(updateCountdown, 1000);
 
-  // The default form is an honest, local draft, rather than a simulated delivery.
-  $('#inquiry-form').addEventListener('submit', event => {
-    event.preventDefault();
-    const form = event.currentTarget;
-    if (!form.reportValidity()) return;
-    const values = new FormData(form);
-    const t = copy[language];
-    const name = String(values.get('name') || '').trim();
-    const email = String(values.get('email') || '').trim();
-    const phone = String(values.get('phone') || '').trim();
-    const interest = t.interest[String(values.get('interest'))] || t.interest.general;
-    const message = String(values.get('message') || '').trim();
-    if (!name || !message) {
-      const empty = !name ? $('#full-name') : $('#message');
-      empty.setCustomValidity(language === 'en' ? 'Please enter more than spaces.' : 'Escribe más que espacios.');
-      empty.reportValidity();
-      empty.addEventListener('input', () => empty.setCustomValidity(''), { once: true });
-      return;
-    }
-    inquirySubject = `${t.draftTitle}: ${interest}`;
-    inquiryText = `${t.draftTitle}\n\n${t.name}: ${name}\n${t.emailLabel}: ${email}\n${t.phoneLabel}: ${phone || t.notProvided}\n${t.interestLabel}: ${interest}\n\n${t.message}:\n${message}`;
-    $('#inquiry-preview').textContent = inquiryText;
-    const companyEmail = config.company.email;
-    const validEmail = /^[^\s@<>]+@[^\s@<>]+\.[^\s@<>]+$/.test(companyEmail || '');
-    $('#inquiry-status').textContent = validEmail ? t.inquiryReady : t.inquiryUnavailable;
-    $('#email-inquiry').hidden = !validEmail;
-    if (validEmail) $('#email-inquiry').href = `mailto:${companyEmail}?subject=${encodeURIComponent(inquirySubject)}&body=${encodeURIComponent(inquiryText)}`;
-    $('#copy-feedback').textContent = '';
-    openDialog('#inquiry-dialog');
-  });
-  $('#copy-inquiry').addEventListener('click', async () => {
-    try {
-      if (!navigator.clipboard || !window.isSecureContext) throw new Error('Clipboard unavailable');
-      await navigator.clipboard.writeText(inquiryText);
-      $('#copy-feedback').textContent = copy[language].copied;
-    } catch (_) {
-      $('#copy-feedback').textContent = copy[language].copyFailed;
-    }
-  });
-  $('#download-inquiry').addEventListener('click', () => {
-    downloadFile(inquiryText, 'INTERDEC-Inquiry.txt');
-    $('#copy-feedback').textContent = copy[language].downloaded;
-  });
-
   // Scroll progress and navigation use a single animation frame per scroll event.
   let pendingFrame = false;
   function renderScroll() {
@@ -351,7 +292,6 @@
   }));
 
   $('#copyright-year').textContent = new Date().getFullYear();
-  $('.form-submit').disabled = false;
   let storedLanguage = 'en';
   try { storedLanguage = localStorage.getItem('interdec-language') || 'en'; } catch (_) { /* No persistent data required. */ }
   applyLanguage(storedLanguage);

@@ -1,6 +1,6 @@
 # INTERDEC Developers website
 
-Portable, bilingual website for **INTERNATIONAL TERRA DEVELOPING CORP, LLC**, branded as **INTERDEC Developers**. It uses plain HTML, CSS, and JavaScript with locally hosted fonts and images. No dependency installation, build command, database, API key, or paid service is required.
+Portable, bilingual website for **INTERNATIONAL TERRA DEVELOPING CORP, LLC**, branded as **INTERDEC Developers**. It uses plain HTML, CSS, and JavaScript with locally hosted fonts and images. No dependency installation, build command, or database is required. Contact forms use Web3Forms for direct message delivery.
 
 The site uses INTERDEC's navy identity and **`#C9A24A` gold**, sampled directly from the supplied November 2026 lot package. Relative links work both at a domain root and under the GitHub Pages `/INTERDEC/` path.
 
@@ -9,8 +9,8 @@ The site uses INTERDEC's navy identity and **`#C9A24A` gold**, sampled directly 
 1. Download or clone the complete repository. If it arrives as a ZIP, extract it before opening any files.
 2. Open `index.html` in a current browser. Keep all the HTML, CSS, and JavaScript files together, with the entire `assets` folder beside them.
 3. Alternatively, if Python 3 is installed, open a terminal in the repository folder and run `python3 -m http.server 8000`. Open `http://localhost:8000/` in your browser. Press **Ctrl + C** in the terminal to stop the server.
-4. Try the EN/ES switch, project tabs, countdown with seconds, invitation, calendar download, lot filters and details, and inquiry previews. Also visit Available Lots, Invest, and Careers.
-5. Copying text can be restricted when opening a local file. Downloading the draft remains available; clipboard support is generally better on a served page or HTTPS site.
+4. Try the EN/ES switch, project tabs, countdown with seconds, invitation, calendar download, lot filters and details, and form validation. Also visit Available Lots, Invest, and Careers.
+5. Use the served site or HTTPS deployment when checking form delivery. Message submission requires network access to Web3Forms; email and phone links remain available as direct contact options.
 
 ## Files and pages
 
@@ -21,10 +21,11 @@ The site uses INTERDEC's navy identity and **`#C9A24A` gold**, sampled directly 
 | `invest.html` | Builder/lot program, launch pricing, financing example, and project inquiry |
 | `careers.html` | Evergreen invitation to connect professionally with INTERDEC and introduce your background |
 | `content.js` | Company contacts, project overview settings, pricing descriptions, event date, and source package path |
-| `app.js` | Home-page language switching, tabs, countdown, dialogs, calendar, and inquiry drafts |
+| `app.js` | Home-page language switching, tabs, countdown, project/privacy dialogs, and calendar |
 | `effects.js` | Shared text reveals, photo depth, pointer lighting, and Home ribbon behavior |
-| `pages.js` | Shared subpage language, navigation, and local inquiry-draft behavior |
-| `lots.js` | Lot filters, result counts, details, and lot-specific email drafts |
+| `pages.js` | Shared subpage language and navigation |
+| `forms.js` | Shared Web3Forms submission, validation, bilingual status feedback, and lot inquiry prefilling |
+| `lots.js` | Lot filters, result counts, details, and links to the website inquiry form |
 | `styles.css` | Base typography, layouts, components, and responsive behavior |
 | `design.css` | Architectural styling, gold accents, home-page effects, and responsive refinements |
 | `pages.css` | Shared styling for the new pages |
@@ -62,9 +63,11 @@ The home hero uses a sharper AI-regenerated aerial concept based on the supplied
 
 ## Contact and careers forms
 
-Forms prepare a local draft for review, download, or opening in the visitor's email application. They do **not** silently submit data, deliver email automatically, store applications, or reserve a lot. The visitor sends the message from their own email application to the configured company address. Careers offers an evergreen invitation for professional introductions, with no implication of active recruitment or a promised response.
+The Home, Invest, and Careers forms send messages directly through Web3Forms to **info@interdecgroup.com**. Visitors stay on the website and receive inline progress, success, or error feedback. A successful provider response indicates that Web3Forms accepted the submission; mailbox receipt is a separate delivery check. Forms validate required fields, include a hidden spam honeypot, and preserve entered text when submission fails. Sending an inquiry does not reserve a lot.
 
-Automatic submission would require a separate form service or backend integration, followed by updated privacy wording and delivery/error testing. Never put private email-service keys in browser JavaScript.
+Web3Forms is configured in `content.js`; its public browser access key is used by `forms.js`. The recipient is bound to that key in Web3Forms and must be verified as `info@interdecgroup.com`; changing the site’s displayed email alone does not change the service recipient. No private mail-service secret belongs in browser code. Lot inquiries link to `index.html?lot=…#contact` so the website form can include the selected lot. Careers remains an evergreen invitation for professional introductions, with no implication of active recruitment or a promised response. Résumé or portfolio links can be included in the message.
+
+Form submission transmits the visitor's name, email, optional phone, message, and other entered inquiry details through Web3Forms so INTERDEC can respond. All three forms link to [Web3Forms privacy information](https://web3forms.com/privacy), and Home's privacy dialog describes this processing. Without JavaScript, visitors can contact the company using its email or phone links.
 
 ## Publish or move to another host
 
@@ -73,7 +76,7 @@ The current repository is `vanessagza/INTERDEC`, with a GitHub Pages preview at 
 1. Upload or commit **all four HTML pages**, **all CSS and JavaScript files**, and the **entire `assets` folder**, including `images/package/`, `documents/`, and `fonts/`.
 2. Preserve the folder names and capitalization. Do not upload only `index.html` or nest the site inside an extra folder.
 3. For GitHub Pages, use **Settings → Pages → Deploy from a branch → main → /(root)**. An empty `.nojekyll` file can optionally bypass Jekyll processing; it is not currently included.
-4. Wait for the Pages deployment to finish in the repository's **Actions** tab. Open the Pages URL and test every page, both languages, downloads, and draft actions. Hard-refresh if an older version is cached.
+4. Wait for the Pages deployment to finish in the repository's **Actions** tab. Open the Pages URL and test every page, both languages, downloads, and form behavior. Hard-refresh if an older version is cached.
 5. For another static host, upload the same files to its public web directory. No application server or build command is needed. Enable HTTPS and test links at the final domain.
 6. Connect the GoDaddy domain only when the hosting choice and DNS change are authorized. Domain purchase does not require GoDaddy hosting. The social-preview image URL in `index.html` may need updating to match the final domain.
 
@@ -81,7 +84,7 @@ The current repository is `vanessagza/INTERDEC`, with a GitHub Pages preview at 
 
 The site retains keyboard controls, labeled forms, native dialogs, reduced-motion support, and English/Spanish switching. Desktop pointer effects are disabled for touch input. The site uses native scrolling without scroll hijacking or a replacement cursor. The typography band drifts slowly on a continuous loop while visible, including when the visitor is not scrolling. It pauses offscreen, when the browser tab is hidden, and for reduced-motion preferences.
 
-Language preference can be stored locally in the browser. There are no analytics scripts, embedded maps, third-party font requests, or advertising cookies. Maps open when a visitor follows a directions link. Review the company privacy text before final launch and update it if integrations change.
+Language preference can be stored locally in the browser. There are no analytics scripts, embedded maps, third-party font requests, or advertising cookies. Form details are transmitted to Web3Forms when the visitor submits a message; the hosting provider may process technical access logs. Maps open when a visitor follows a directions link. The privacy dialog and form notices describe the current integration.
 
 ## Readability and visual refinements
 
@@ -101,7 +104,7 @@ Available Lots, Invest, and Careers preload their own cinematic photo background
 
 The current pages contain complete, intentional copy. Commercial lot prices are provided directly by the project sales team. Careers invites professional introductions and connections with INTERDEC.
 
-Useful future improvements include direct form delivery, so visitors can send an inquiry without opening an email app, and a regular inventory update process to keep lot availability and program capacity current.
+A regular inventory update process can keep lot availability and program capacity current.
 
 ## Mobile menu motion
 

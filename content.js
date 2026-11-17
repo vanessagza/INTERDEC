@@ -1,6 +1,11 @@
 /* INTERDEC website settings. Empty story overrides preserve the authored page copy.
-   No build tools, secret keys, accounts, or paid services are required. */
+   Forms use the public Web3Forms client access key configured below. */
 window.INTERDEC = {
+  forms: {
+    // Web3Forms client access keys are intended for public HTML/JavaScript.
+    // The recipient is configured and verified in the Web3Forms dashboard.
+    accessKey: 'c891c0b4-3617-43d2-b34e-f7231f14eaaf',
+  },
   company: {
     name: 'INTERDEC',
     legalName: 'INTERNATIONAL TERRA DEVELOPING CORP, LLC',
