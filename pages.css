@@ -233,3 +233,58 @@
 @media (max-height: 500px) and (min-width: 480px) and (max-width: 1100px) {
   .subpage .site-header, .subpage .site-header.scrolled { height: 64px; padding-block: 5px; }
 }
+
+/* Match the home-page entrance while keeping the original heading line breaks. */
+.subpage .page-title > span, .subpage .page-title > em {
+  display: inline-block;
+  max-width: 100%;
+  animation: titleUnfold 1.3s var(--ease-out) both;
+}
+.subpage .page-title > span { animation-delay: .1s; }
+.subpage .page-title > em { animation-delay: .22s; }
+.subpage .page-hero .page-kicker { animation: heroText .9s .05s both; }
+.subpage .page-hero .page-lead { animation: heroText .9s .4s both; }
+.subpage .page-hero .page-actions { animation: heroText .9s .55s both; }
+.subpage .page-hero .stat-grid, .subpage .page-hero .lots-snapshot { animation: heroText .9s .65s both; }
+@media (max-width: 371px) {
+  /* Preserve the original leading when the Spanish italic heading wraps. */
+  html[lang=es] .careers-page .page-title > em { margin-bottom: 8px; }
+}
+
+/* Background depth follows the pointer; the text remains in its own layer. */
+.subpage .page-hero::before { transform: none; }
+.subpage .page-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0;
+  background: radial-gradient(ellipse 55% 70% at var(--pointer-x, 68%) var(--pointer-y, 44%), #c9a24a32, transparent 70%);
+}
+.photo-effect-frame { position: relative; display: block; overflow: hidden; isolation: isolate; }
+.lots-plan-image > .photo-effect-frame { margin: 0; letter-spacing: normal; text-align: initial; }
+.photo-effect-frame > img { display: block; transform: none; transform-origin: center; transition: transform .45s var(--ease-out); }
+.photo-effect-frame::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0;
+  background: radial-gradient(circle at var(--visual-x, 70%) var(--visual-y, 30%), #c9a24a30, transparent 60%);
+}
+@media (min-width: 901px) and (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .subpage .page-hero::before { transform: translate3d(var(--hero-pointer-x, 0px), calc(var(--hero-shift, 0px) + var(--hero-pointer-y, 0px)), 0) scale(1.14); will-change: transform; }
+  .subpage .page-hero::after { opacity: 1; }
+  .photo-effect-frame:hover > img { transform: perspective(1000px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg)) scale(1.1); }
+  .photo-effect-frame:hover::after { opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .subpage .page-title > span, .subpage .page-title > em,
+  .subpage .page-hero .page-kicker, .subpage .page-hero .page-lead,
+  .subpage .page-hero .page-actions, .subpage .page-hero .stat-grid,
+  .subpage .page-hero .lots-snapshot { animation: none; opacity: 1; transform: none; clip-path: none; }
+  .subpage .page-hero::before, .photo-effect-frame > img { transform: none; transition: none; will-change: auto; }
+  .subpage .page-hero::after, .photo-effect-frame::after { opacity: 0; }
+}

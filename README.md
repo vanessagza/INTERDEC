@@ -22,7 +22,7 @@ The site uses INTERDEC's navy identity and **`#C9A24A` gold**, sampled directly 
 | `careers.html` | Evergreen invitation to connect professionally with INTERDEC and introduce your background |
 | `content.js` | Company contacts, project overview settings, pricing descriptions, event date, and source package path |
 | `app.js` | Home-page language switching, tabs, countdown, dialogs, calendar, and inquiry drafts |
-| `effects.js` | Optional scroll and pointer enhancements on the home page |
+| `effects.js` | Shared text reveals, photo depth, pointer lighting, and Home ribbon behavior |
 | `pages.js` | Shared subpage language, navigation, and local inquiry-draft behavior |
 | `lots.js` | Lot filters, result counts, details, and lot-specific email drafts |
 | `styles.css` | Base typography, layouts, components, and responsive behavior |
@@ -112,3 +112,7 @@ Every page uses the same eight-link mobile menu, starting with Home/Inicio. The 
 Home includes a dedicated `#downloads` section for saving or opening the unchanged original8-page Puerta del Sol PDF, linked from the project summary and footer. The expanded location section presents the package's address, schools, I-2/US83 access, all nine stores listed within1.4miles, and a labeled AI-enhanced retail illustration with a link to its source.
 
 All52 inventory cards show supplied dimensions/areas directly; detail dialogs preserve source differences. Lots18–26 are reserved, leaving40 residential plus3 commercial available. Six lots have area only in the package, so no linear dimensions are invented. The full inventory is shown by default, making reserved lots visible immediately; filters can narrow to available or reserved. Compact cards use 14px supporting text and 2–6 columns depending on available width.
+
+## Consistent page effects
+
+Available Lots, Invest, and Careers share Home's staggered heading entrance and pointer-following hero photo movement/light. Section headings reveal as they enter the viewport. The Invest aerial and Available Lots plan also use subtle image tilt and lighting inside dedicated image frames; captions and document links stay stationary. The shared controller only runs pointer effects on fine-pointer desktop layouts, disables them for touch/reduced motion, and leaves all content readable without JavaScript. Changed effect assets use versioned URLs so existing visitors receive the new behavior.

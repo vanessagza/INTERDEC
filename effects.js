@@ -5,9 +5,9 @@
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
   const finePointer = matchMedia('(hover: hover) and (pointer: fine)');
   const desktop = matchMedia('(min-width: 901px)');
-  const hero = document.querySelector('.hero');
+  const hero = document.querySelector('.hero, .page-hero');
   const ribbon = document.querySelector('.type-ribbon');
-  const visual = document.querySelector('.project-visual');
+  const visuals = [...document.querySelectorAll('.project-visual, [data-effect-visual]')];
   const buttons = [...document.querySelectorAll('.button')];
   if (!hero) return;
 
@@ -17,6 +17,20 @@
       element.style.setProperty('--reveal-delay', `${Math.min(index * 85, 255)}ms`);
     });
   });
+
+  if (document.body.classList.contains('subpage') && 'IntersectionObserver' in window) {
+    const revealNodes = [...document.querySelectorAll('.page-section h2, .page-section h3, .page-section p.page-kicker, .career-intro > p')];
+    const revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -24px 0px' });
+    revealNodes.forEach(element => { element.classList.add('reveal'); revealObserver.observe(element); });
+    document.body.classList.add('motion-ready');
+  }
 
   let heroVisible = true;
   let ribbonVisible = true;
@@ -99,11 +113,12 @@
   });
 
   function resetVisual() {
-    if (!visual) return;
-    ['--tilt-x', '--tilt-y', '--visual-x', '--visual-y'].forEach(property => visual.style.removeProperty(property));
+    visuals.forEach(visual => {
+      ['--tilt-x', '--tilt-y', '--visual-x', '--visual-y'].forEach(property => visual.style.removeProperty(property));
+    });
   }
 
-  if (visual) {
+  visuals.forEach(visual => {
     visual.addEventListener('pointermove', event => {
       if (!pointerEnabled() || event.pointerType === 'touch') return;
       const bounds = visual.getBoundingClientRect();
@@ -114,8 +129,10 @@
       visual.style.setProperty('--visual-x', `${(x * 100).toFixed(2)}%`);
       visual.style.setProperty('--visual-y', `${(y * 100).toFixed(2)}%`);
     }, { passive: true });
-    visual.addEventListener('pointerleave', resetVisual);
-  }
+    visual.addEventListener('pointerleave', () => {
+      ['--tilt-x', '--tilt-y', '--visual-x', '--visual-y'].forEach(property => visual.style.removeProperty(property));
+    });
+  });
 
   const lotPanel = document.querySelector('.lot-panel');
   function transitionPanel(event) {
