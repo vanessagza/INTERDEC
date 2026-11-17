@@ -106,3 +106,9 @@ Useful future improvements include direct form delivery, so visitors can send an
 ## Mobile menu motion
 
 Every page uses the same eight-link mobile menu, starting with Home/Inicio. The compact glass panel opens from the menu button with a circular reveal, a brief light sweep, and staggered links. It folds away when dismissed; quick close/reopen actions cancel pending hides. Navigating or switching to desktop dismisses immediately. Reduced-motion preferences disable the decorative animations.
+
+## PDF resources and compact inventory
+
+Home includes a dedicated `#downloads` section for saving or opening the unchanged original8-page Puerta del Sol PDF, linked from the project summary and footer. The expanded location section presents the package's address, schools, I-2/US83 access, all nine stores listed within1.4miles, and a labeled AI-enhanced retail illustration with a link to its source.
+
+All52 inventory cards show supplied dimensions/areas directly; detail dialogs preserve source differences. Lots18–26 are reserved, leaving40 residential plus3 commercial available. Six lots have area only in the package, so no linear dimensions are invented. The full inventory is shown by default, making reserved lots visible immediately; filters can narrow to available or reserved. Compact cards use 14px supporting text and 2–6 columns depending on available width.

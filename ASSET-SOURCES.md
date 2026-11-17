@@ -48,7 +48,7 @@ The primary gold **`#C9A24A`** was read directly from the PDF's text colors and 
 
 ### Differences within the supplied material
 
-The inventory table lists most residential lots as the typical 42.5′ × 129.5′ size. The embedded plan additionally labels areas including lots 1/30/49 at 5,515 sq ft, lot 10 at 5,519, lot 11 at 5,506, lot 20 at 5,507, and lots 39/40 at 5,715. The website identifies these source differences and directs visitors to confirm final dimensions. Static November inventory is not represented as live availability.
+The inventory table lists most residential lots as the typical 42.5′ × 129.5′ size. The embedded plan additionally labels different areas for 14 lots: lots 1/30/49 at 5,515 sq ft, lot 10 at 5,519, lots 11/12 at 5,506, lots 13–16 at 5,500, lot 17 at 5,659, lot 20 at 5,507, and lots 39/40 at 5,715. The website identifies these source differences and directs visitors to confirm final dimensions. Static November inventory is not represented as live availability.
 
 The flyer summarizes the first three months after delivery as payment-free. The PDF labels delivery as month 1 but gives the precise example of no payments in May, June, and July after April 10 delivery. The website preserves the dated PDF example instead of inventing a reconciliation. The advertised installments do not pay the full purchase price; the remaining balance is explicitly due at the end.
 
@@ -95,3 +95,9 @@ The bilingual company story is newly written mission copy approved in scope by V
 - `assets/images/careers-hero.webp` (1536 × 1024): AI-edited adaptation of Vanessa's supplied realtor-and-couple photo. Horizontally mirrored composition puts the couple on the right and leaves reading space on the left. This is decorative careers imagery, not an identification of INTERDEC employees or customers.
 
 All four derivative assets are encoded as WebP at quality 88. The company contact was changed to **info@interdecgroup.com** at Vanessa's request.
+
+## Location illustration and full lot measurements — November 18, 2026
+
+`assets/images/nearby-retail-hd.webp` is a1536 ×1024 AI-enhanced illustration based on the original page-3 `package/nearby-retail-aerial.jpeg`, encoded asWebP atquality88. It recreates the retail-corridor composition with sharper detail and removes the original floating availability/lease/retailer overlays. Generative buildings, landscaping and signage can differ; the site identifies it as an illustration and links to the original image. It is not the Puerta del Sol site plan. Store names and the within1.4miles claim are transcribed from page3's written list, not inferred from generated imagery.
+
+All52 lot cards now display the measurements actually supplied by page5:46 residential lots use42.5′ ×129.5′ with approximately5,504sqft; lots18,19,29 andcommercial50–52 have only their supplied areas. No width/depth was invented for those six. Detail dialogs separately identify inventory dimensions, inventory area and14 differing proposed-plan area annotations. Lots18–26 remain reserved as explicitly listed on pages4–5. The original eight-page PDF remains unchanged and now has a dedicated download/view section on Home.
