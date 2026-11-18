@@ -10,9 +10,9 @@ window.INTERDEC = {
     name: 'INTERDEC',
     legalName: 'INTERNATIONAL TERRA DEVELOPING CORP, LLC',
     domain: 'interdecgroup.com',
-    email: 'info@interdecgroup.com', // Supplied company contact; mail drafts use the visitor's email app.
-    phone: '+528114145035', // Company contact supplied by Vanessa; distinct from project sales.
-    phoneDisplay: '+52 81 1414 5035',
+    email: 'info@interdecgroup.com', // Public company contact; website forms use Web3Forms.
+    phone: '+19565888227', // Bernardo Diaz, Project Manager; supplied as the company contact.
+    phoneDisplay: '+1 (956) 588-8227',
     // Optional replacement for the first paragraph of the company story.
     story: '',
     storyEs: '',
@@ -21,6 +21,7 @@ window.INTERDEC = {
     name: 'Puerta del Sol',
     city: 'Donna, Texas',
     address: 'Salinas Blvd & Mile 10 N Rd, Donna, TX 78537',
+    mapsURL: 'https://maps.app.goo.gl/81aUoBMNfsy8Tv879?g_st=it',
     residentialLots: 49,
     commercialLots: 3,
     residentialSize: '42.5′ × 129.5′ · approx. 5,504 sq ft (typical)',

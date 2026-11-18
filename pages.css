@@ -162,7 +162,8 @@
 .lots-page .page-hero { --page-hero-image: url('assets/images/lots-hero-cinematic.webp'); --page-hero-position: 50% 52%; }
 .invest-page .page-hero { --page-hero-image: url('assets/images/invest-hero-sunset.webp'); --page-hero-position: 50% 54%; }
 .careers-page .page-hero { --page-hero-image: url('assets/images/careers-hero.webp'); --page-hero-position: 50% 45%; }
-.lots-page .page-hero, .invest-page .page-hero, .careers-page .page-hero {
+.sales-team-page .page-hero { --page-hero-image: url('assets/images/invest-hero-sunset.webp'); --page-hero-position: 50% 54%; }
+.lots-page .page-hero, .invest-page .page-hero, .careers-page .page-hero, .sales-team-page .page-hero {
   min-height: 760px;
   display: flex;
   align-items: center;
@@ -170,7 +171,7 @@
   padding-bottom: 80px;
   background: var(--deep);
 }
-.lots-page .page-hero::before, .invest-page .page-hero::before, .careers-page .page-hero::before {
+.lots-page .page-hero::before, .invest-page .page-hero::before, .careers-page .page-hero::before, .sales-team-page .page-hero::before {
   background-image: linear-gradient(90deg, #031c30f2 0%, #031c30da 27%, #031c3096 53%, #031c3020 100%),
                     linear-gradient(0deg, #031c30d9 0%, transparent 65%, #031c3040 100%),
                     var(--page-hero-image);
@@ -190,6 +191,19 @@
 .invest-page .stat-label { color: #edf3f6; }
 .careers-page .page-hero .page-title { max-width: 680px; }
 .careers-page .page-hero .page-lead { max-width: 540px; }
+.sales-team-page .page-hero .page-title { max-width: 1000px; font-size: clamp(64px, 7.8vw, 118px); }
+.sales-team-page .team-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 22px; }
+.sales-team-page .team-card { display: flex; flex-direction: column; }
+.sales-team-page .team-card > div:not(.team-photo-empty) { display: flex; flex-direction: column; flex: 1; padding: 24px; }
+.sales-team-page .team-card > .team-photo-empty { display: block; width: 100%; aspect-ratio: 1; padding: 0; align-self: stretch; background: #e1e7eb; }
+.sales-team-page .team-card h3 { font-size: 30px; line-height: 1.15; }
+.sales-team-page .team-card .eyebrow { font-size: 14px; letter-spacing: .1em; }
+.sales-team-page .team-card a { margin-top: auto; font-size: 16px; }
+.sales-team-page .team-card a > span { font-family: Arial, sans-serif; }
+.sales-team-location .page-actions .text-link { color: var(--navy); }
+@media (max-width: 1199px) {
+  .sales-team-page .team-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
 
 /* White source artwork needs a dark ink treatment on the partner cards. */
 .partner-item img[src$="top-texas-title-logo.png"] { filter: brightness(0) saturate(100%); }
@@ -205,17 +219,17 @@
   object-position: center 68%;
 }
 @media (max-width: 1100px) {
-  .lots-page .page-hero, .invest-page .page-hero, .careers-page .page-hero { padding-top: 155px; }
+  .lots-page .page-hero, .invest-page .page-hero, .careers-page .page-hero, .sales-team-page .page-hero { padding-top: 155px; }
   .page-hero .page-title { max-width: 760px; }
   .careers-page .page-hero::before { background-position: 60% 45%; }
 }
 @media (max-width: 700px) {
-  .lots-page .page-hero, .invest-page .page-hero, .careers-page .page-hero {
+  .lots-page .page-hero, .invest-page .page-hero, .careers-page .page-hero, .sales-team-page .page-hero {
     min-height: 740px;
     padding-top: 135px;
     padding-bottom: 55px;
   }
-  .lots-page .page-hero::before, .invest-page .page-hero::before, .careers-page .page-hero::before {
+  .lots-page .page-hero::before, .invest-page .page-hero::before, .careers-page .page-hero::before, .sales-team-page .page-hero::before {
     background-image: linear-gradient(90deg, #031c30e8, #031c30a6 75%, #031c3080),
                       linear-gradient(0deg, #031c30eb 0%, transparent 75%),
                       var(--page-hero-image);
@@ -229,8 +243,10 @@
   .invest-page .stat-value { font-size: 42px; }
   .invest-page .stat-label { margin-top: 0; }
   .investment-visual img { aspect-ratio: 1.35 / 1; object-position: center 70%; }
+  .sales-team-page .page-hero .page-title { font-size: clamp(56px, 12.5vw, 86px); }
+  .sales-team-page .team-grid { grid-template-columns: minmax(0, 1fr); }
 }
-@media (max-height: 500px) and (min-width: 480px) and (max-width: 1100px) {
+@media (max-height: 650px) and (min-width: 480px) and (max-width: 1199px) {
   .subpage .site-header, .subpage .site-header.scrolled { height: 64px; padding-block: 5px; }
 }
 

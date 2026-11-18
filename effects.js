@@ -12,14 +12,14 @@
   if (!hero) return;
 
   // Delays belong to existing reveal nodes, not translated text or new hidden content.
-  document.querySelectorAll('.intro-grid, .section-heading, .approach-left').forEach(group => {
+  document.querySelectorAll('.intro-grid, .section-heading, .approach-left, .team-grid').forEach(group => {
     group.querySelectorAll('.reveal').forEach((element, index) => {
       element.style.setProperty('--reveal-delay', `${Math.min(index * 85, 255)}ms`);
     });
   });
 
   if (document.body.classList.contains('subpage') && 'IntersectionObserver' in window) {
-    const revealNodes = [...document.querySelectorAll('.page-section h2, .page-section h3, .page-section p.page-kicker, .career-intro > p')];
+    const revealNodes = [...document.querySelectorAll('.reveal, .page-section h2, .page-section h3, .page-section p.page-kicker, .career-intro > p')];
     const revealObserver = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {

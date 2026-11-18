@@ -28,6 +28,10 @@
     },
   };
 
+  $$('[data-project-map]').forEach(link => {
+    if (config.project.mapsURL) link.href = config.project.mapsURL;
+  });
+
   // Preserve the authored English copy. Spanish is optional and browser-local.
   if (config.company.story) {
     $('#company-story').textContent = config.company.story;
@@ -157,7 +161,7 @@
   document.addEventListener('keydown', event => {
     if (event.key === 'Escape' && !mobileMenu.hidden) { closeMenu(); menuButton.focus(); }
   });
-  const desktopMedia = matchMedia('(min-width:1101px)');
+  const desktopMedia = matchMedia('(min-width:1200px)');
   desktopMedia.addEventListener('change', event => { if (event.matches) closeMenu(true); });
 
   // Native dialogs supply keyboard focus containment and Escape-to-close.
@@ -222,6 +226,7 @@
       'UID:puerta-del-sol-groundbreaking-20261202@interdecgroup.com', `DTSTAMP:${stamp}`, `DTSTART:${p.calendarStartUTC}`,
       `SUMMARY:${escapeICS('Puerta del Sol — Groundbreaking Ceremony')}`,
       `LOCATION:${escapeICS(p.address)}`,
+      `URL:${p.mapsURL}`,
       `DESCRIPTION:${escapeICS(`Official groundbreaking ceremony. 49 residential lots and 3 commercial lots announced. Food and drinks provided per the invitation. Confirm attendance details and site access with the project contact: ${p.inquiryPhoneDisplay}. INTERDEC is listed among the sponsors; the invitation credits AVIG Development.`)}`,
       'END:VEVENT', 'END:VCALENDAR', '',
     ];

@@ -19,6 +19,7 @@ The site uses INTERDEC's navy identity and **`#C9A24A` gold**, sampled directly 
 | `index.html` | Home page, project overview, nearby amenities, project team, event, FAQ, and contact section |
 | `available-lots.html` | Filterable lot inventory and supplied proposed site plan |
 | `invest.html` | Builder/lot program, launch pricing, financing example, and project inquiry |
+| `sales-team.html` | Bilingual Big Realty Sales Team, realtor/project manager contacts, project directions, and direct inquiry form |
 | `careers.html` | Evergreen invitation to connect professionally with INTERDEC and introduce your background |
 | `content.js` | Company contacts, project overview settings, pricing descriptions, event date, and source package path |
 | `app.js` | Home-page language switching, tabs, countdown, project/privacy dialogs, and calendar |
@@ -38,7 +39,7 @@ The site uses INTERDEC's navy identity and **`#C9A24A` gold**, sampled directly 
 
 ## Company contacts and story
 
-Vanessa supplied **info@interdecgroup.com** and **+52 81 1414 5035** as INTERDEC's company contacts. The phone's machine-readable form is `+528114145035`. The project sales team's US phone numbers remain separately labeled.
+Vanessa supplied **info@interdecgroup.com** and **+1 (956) 588-8227** as INTERDEC's company contacts. The phone's machine-readable form is `+19565888227`. The project sales team's US phone numbers remain separately labeled.
 
 Start with `content.js` when updating company details. Preserve quotation marks and commas. The home page includes an English/Spanish company story centered on its purpose and values, without unverified founder details or dates. `company.story` and `company.storyEs` optionally replace its opening paragraph.
 
@@ -63,9 +64,9 @@ The home hero uses a sharper AI-regenerated aerial concept based on the supplied
 
 ## Contact and careers forms
 
-The Home, Invest, and Careers forms send messages directly through Web3Forms to **info@interdecgroup.com**. Visitors stay on the website and receive inline progress, success, or error feedback. A successful provider response indicates that Web3Forms accepted the submission; mailbox receipt is a separate delivery check. Forms validate required fields, include a hidden spam honeypot, and preserve entered text when submission fails. Sending an inquiry does not reserve a lot.
+The Home, Invest, Careers, and Sales Team forms send messages directly through Web3Forms to **info@interdecgroup.com**. Visitors stay on the website and receive inline progress, success, or error feedback. A successful provider response indicates that Web3Forms accepted the submission; mailbox receipt is a separate delivery check. Forms validate required fields, include a hidden spam honeypot, and preserve entered text when submission fails. Sending an inquiry does not reserve a lot.
 
-Web3Forms is configured in `content.js`; its public browser access key is used by `forms.js`. The recipient is bound to that key in Web3Forms and must be verified as `info@interdecgroup.com`; changing the site’s displayed email alone does not change the service recipient. No private mail-service secret belongs in browser code. Lot inquiries link to `index.html?lot=…#contact` so the website form can include the selected lot. Careers remains an evergreen invitation for professional introductions, with no implication of active recruitment or a promised response. Résumé or portfolio links can be included in the message.
+Web3Forms is configured in `content.js`; its public browser access key is used by `forms.js`. The recipient is bound to that key in Web3Forms and may be the company-designated inbox behind the public `info@interdecgroup.com` alias; changing the site’s displayed email alone does not change the service recipient. No private mail-service secret belongs in browser code. Lot inquiries link to `index.html?lot=…#contact` so the website form can include the selected lot. Careers remains an evergreen invitation for professional introductions, with no implication of active recruitment or a promised response. Résumé or portfolio links can be included in the message.
 
 Form submission transmits the visitor's name, email, optional phone, message, and other entered inquiry details through Web3Forms so INTERDEC can respond. All three forms link to [Web3Forms privacy information](https://web3forms.com/privacy), and Home's privacy dialog describes this processing. Without JavaScript, visitors can contact the company using its email or phone links.
 
@@ -73,7 +74,7 @@ Form submission transmits the visitor's name, email, optional phone, message, an
 
 The current repository is `vanessagza/INTERDEC`, with a GitHub Pages preview at `https://vanessagza.github.io/INTERDEC/`.
 
-1. Upload or commit **all four HTML pages**, **all CSS and JavaScript files**, and the **entire `assets` folder**, including `images/package/`, `documents/`, and `fonts/`.
+1. Upload or commit **all five HTML pages**, **all CSS and JavaScript files**, and the **entire `assets` folder**, including `images/package/`, `documents/`, and `fonts/`.
 2. Preserve the folder names and capitalization. Do not upload only `index.html` or nest the site inside an extra folder.
 3. For GitHub Pages, use **Settings → Pages → Deploy from a branch → main → /(root)**. An empty `.nojekyll` file can optionally bypass Jekyll processing; it is not currently included.
 4. Wait for the Pages deployment to finish in the repository's **Actions** tab. Open the Pages URL and test every page, both languages, downloads, and form behavior. Hard-refresh if an older version is cached.
@@ -108,7 +109,7 @@ A regular inventory update process can keep lot availability and program capacit
 
 ## Mobile menu motion
 
-Every page uses the same eight-link mobile menu, starting with Home/Inicio. The compact glass panel opens from the menu button with a circular reveal, a brief light sweep, and staggered links. It folds away when dismissed; quick close/reopen actions cancel pending hides. Navigating or switching to desktop dismisses immediately. Reduced-motion preferences disable the decorative animations.
+Every page uses the same nine-link mobile menu, starting with Home/Inicio. The compact glass panel opens from the menu button with a circular reveal, a brief light sweep, and staggered links. It folds away when dismissed; quick close/reopen actions cancel pending hides. Navigating or switching to desktop dismisses immediately. Reduced-motion preferences disable the decorative animations.
 
 ## PDF resources and compact inventory
 
@@ -119,3 +120,9 @@ All52 inventory cards show supplied dimensions/areas directly; detail dialogs pr
 ## Consistent page effects
 
 Available Lots, Invest, and Careers share Home's staggered heading entrance and pointer-following hero photo movement/light. Section headings reveal as they enter the viewport. The Invest aerial and Available Lots plan also use subtle image tilt and lighting inside dedicated image frames; captions and document links stay stationary. The shared controller only runs pointer effects on fine-pointer desktop layouts, disables them for touch/reduced motion, and leaves all content readable without JavaScript. Changed effect assets use versioned URLs so existing visitors receive the new behavior.
+
+## Sales team and project directions — November 18, 2026
+
+The full profiles now live on `sales-team.html`, titled Big Realty Sales Team / Equipo de Ventas Big Realty, with a compact link from Home. The original three realtor contacts are unchanged. Bernardo Diaz is listed separately as Project Manager / Gerente de Proyecto with +1 (956) 588-8227 and an intentionally blank photo area. This is also the current company contact number. The new page uses the same language control, menu, hero/scroll effects and direct Web3Forms inquiry flow as the other pages.
+
+The company-supplied Google Maps pin is stored in `project.mapsURL` and appears on prominent directions links throughout the site, including the Home location/contact sections, event, lot page, Invest, Careers and Sales Team. The calendar also includes the same directions URL. The pin identifies the land, not a company office. The mobile menu has nine links and switches to desktop at1200px.

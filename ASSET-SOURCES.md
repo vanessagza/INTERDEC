@@ -2,7 +2,7 @@
 
 ## Company-supplied information
 
-Vanessa supplied INTERDEC's short name, legal name **INTERNATIONAL TERRA DEVELOPING CORP, LLC**, Texas business activities, intended domain `interdecgroup.com`, company email **info@interdecgroup.com**, and company phone **+52 81 1414 5035**.
+Vanessa supplied INTERDEC's short name, legal name **INTERNATIONAL TERRA DEVELOPING CORP, LLC**, Texas business activities, intended domain `interdecgroup.com`, company email **info@interdecgroup.com**, and company phone **+1 (956) 588-8227**.
 
 Company history, office address, ownership percentages, job vacancies, employment terms, and investment returns have not been supplied and must not be invented.
 
@@ -107,3 +107,9 @@ All52 lot cards now display the measurements actually supplied by page5:46 resid
 At Vanessa's request, Home, Invest, and Careers now use Web3Forms to send website inquiries directly to **info@interdecgroup.com**. The integration uses the user-supplied Web3Forms account configuration in `content.js`; the browser controller is `forms.js`. No access-key value is repeated in this document.
 
 Submitting a form transmits the visitor's name, email, optional phone, message, and other entered inquiry details through Web3Forms for INTERDEC to respond. The site names the provider in each form notice and Home's privacy dialog and links to https://web3forms.com/privacy. Submitting an inquiry does not reserve a lot. Careers invites professional introductions without claiming active vacancies. The original downloadable project PDF and source imagery remain unchanged.
+
+## Sales Team and contact update — November 18, 2026
+
+Vanessa supplied Bernardo Diaz's role as Project Manager and phone +1 (956) 588-8227, also requested as the replacement company contact. No portrait was supplied; his photo area is intentionally blank. Allen Lozano, Francisco “Frank” Velasco and Yahir Galvan retain their supplied names, roles, phone numbers and previously enhanced portraits. All profiles moved to the dedicated bilingual Sales Team page, with the supplied project-participant credits preserved.
+
+The project directions use Vanessa's exact supplied pin: https://maps.app.goo.gl/81aUoBMNfsy8Tv879?g_st=it . No office location or new project address is inferred from this link. The Sales Team hero reuses the existing illustrative sunset-city asset and its established provenance; it does not claim to show Puerta del Sol.

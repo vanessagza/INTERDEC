@@ -548,6 +548,27 @@
 .footer-page-nav { display: flex; gap: 28px; flex-wrap: wrap; padding-bottom: 35px; font-size: 14px; }
 .footer-page-nav a { border-bottom: 1px solid transparent; }
 .footer-page-nav a:hover { border-bottom-color: #a27b26; }
+
+/* The home page introduces the team; complete profiles have their own page. */
+.sales-team-intro { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(280px, .7fr); align-items: center; gap: 7vw; background: #eef1f3; padding-block: 75px; }
+.sales-team-intro .eyebrow { margin-bottom: 20px; color: #77602d; }
+.sales-team-intro .display-title { max-width: 900px; font-size: clamp(50px, 4.8vw, 76px); margin-bottom: 22px; }
+.sales-team-intro p { max-width: 760px; color: #5d707b; font-size: 18px; line-height: 1.85; }
+.team-intro-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 16px 26px; margin-top: 28px; }
+.team-intro-actions .button { min-height: 56px; }
+.team-intro-actions .text-link { font-size: 16px; }
+.sales-team-intro .team-intro-actions { flex-direction: column; align-items: stretch; margin-top: 0; }
+@media (max-width: 900px) {
+  .sales-team-intro { grid-template-columns: minmax(0, 1fr); gap: 26px; }
+  .sales-team-intro .team-intro-actions { max-width: 600px; }
+}
+@media (max-width: 700px) {
+  .sales-team-intro { padding-block: 60px; }
+  .sales-team-intro .display-title { font-size: 52px; }
+  .sales-team-intro p { font-size: 17px; }
+  .team-intro-actions { align-items: stretch; gap: 14px; }
+  .team-intro-actions .button { width: 100%; }
+}
 @media (max-width: 1100px) {
   .desktop-nav { gap: 18px; margin-right: 24px; }
 
@@ -815,10 +836,12 @@ html[lang=es] .hero h1 { font-size: clamp(70px, 7.3vw, 128px); }
   .location-facts { grid-template-columns: minmax(0, 1fr); }
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1199px) {
   .site-header .desktop-nav, .site-header .header-cta { display: none; }
   .site-header .menu-toggle { display: block; }
   .site-header, .site-header.scrolled { height: 82px; }
+}
+@media (max-width: 1100px) {
   .hero { grid-template-columns: minmax(0, 1fr); gap: 32px; padding-top: 145px; }
   .hero-content { grid-column: 1; grid-row: 1; max-width: 850px; }
   .hero h1 { font-size: clamp(80px, 10.5vw, 112px); }
@@ -929,6 +952,7 @@ html[lang=es] .hero h1 { font-size: clamp(70px, 7.3vw, 128px); }
 .mobile-nav a:nth-child(6) { --menu-order: 5; }
 .mobile-nav a:nth-child(7) { --menu-order: 6; }
 .mobile-nav a:nth-child(8) { --menu-order: 7; }
+.mobile-nav a:nth-child(9) { --menu-order: 8; }
 @keyframes menuItemReveal {
   from { opacity: 0; transform: translateY(16px); filter: blur(3px); }
   to { opacity: 1; transform: none; filter: none; }
@@ -982,9 +1006,9 @@ html[lang=es] .hero h1 { font-size: clamp(70px, 7.3vw, 128px); }
 @media (max-height: 650px) and (max-width: 479px) {
   .mobile-nav { padding: 8px; }
   .mobile-nav a { min-height: 44px; padding-block: 8px; }
-  .mobile-nav > .eyebrow { padding-top: 10px; }
+  .mobile-nav > .eyebrow { display: none; }
 }
-@media (max-height: 500px) and (min-width: 480px) and (max-width: 1100px) {
+@media (max-height: 650px) and (min-width: 480px) and (max-width: 1199px) {
   .site-header, .site-header.scrolled { height: 64px; padding-block: 5px; }
   .brand img { height: 54px; }
   .mobile-nav {
@@ -998,6 +1022,10 @@ html[lang=es] .hero h1 { font-size: clamp(70px, 7.3vw, 128px); }
   }
   .mobile-nav a { min-height: 44px; padding: 8px 12px; font-size: 18px; }
   .mobile-nav > .eyebrow { grid-column: 1 / -1; margin-top: 4px; padding-top: 8px; }
+}
+@media (max-height: 350px) and (min-width: 480px) and (max-width: 1199px) {
+  .mobile-nav { padding: 6px; }
+  .mobile-nav > .eyebrow { display: none; }
 }
 
 /* Four matching groups keep the ribbon seamless as it drifts on its own. */

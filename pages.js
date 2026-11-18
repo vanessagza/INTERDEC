@@ -82,7 +82,11 @@
   document.addEventListener('keydown', event => {
     if (event.key === 'Escape' && menu && !menu.hidden) { closeMenu(); menuButton.focus(); }
   });
-  matchMedia('(min-width:1101px)').addEventListener('change', event => { if (event.matches) closeMenu(true); });
+  matchMedia('(min-width:1200px)').addEventListener('change', event => { if (event.matches) closeMenu(true); });
+
+  $$('[data-project-map]').forEach(link => {
+    if (config.project?.mapsURL) link.href = config.project.mapsURL;
+  });
 
   $$('[data-company-email]').forEach(element => {
     const email = config.company.email || 'info@interdecgroup.com';
@@ -90,8 +94,8 @@
     element.href = `mailto:${email}`;
   });
   $$('[data-company-phone]').forEach(element => {
-    element.textContent = config.company.phoneDisplay || '+52 81 1414 5035';
-    element.href = `tel:${(config.company.phone || '+528114145035').replace(/[^+\d]/g, '')}`;
+    element.textContent = config.company.phoneDisplay || '+1 (956) 588-8227';
+    element.href = `tel:${(config.company.phone || '+19565888227').replace(/[^+\d]/g, '')}`;
   });
 
   let frame;
