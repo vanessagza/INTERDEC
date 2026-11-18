@@ -109,3 +109,10 @@
 .lots-stats .stat-label { color: #596a6d; }
 .lots-hero .page-hero-inner { max-width: 1400px; }
 .lot-card-top .lot-card-arrow { width: 15px; height: 15px; }
+
+/* Show the supplied annotated plan in full, with every edge and label intact. */
+.lots-plan-image--detailed { max-width: 1100px; padding: 12px; margin-inline: auto; }
+.lots-plan-image--detailed img { height: auto; max-height: none; object-fit: contain; }
+.lots-plan-actions { gap: 18px 24px; }
+.lots-plan-actions .text-link { color: var(--navy); }
+@media (max-width: 700px) { .lots-plan-image--detailed { padding: 8px; } .lots-plan-actions > .button { width: 100%; } }

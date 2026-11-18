@@ -126,3 +126,7 @@ Available Lots, Invest, and Careers share Home's staggered heading entrance and 
 The full profiles now live on `sales-team.html`, titled Big Realty Sales Team / Equipo de Ventas Big Realty, with a compact link from Home. The original three realtor contacts are unchanged. Bernardo Diaz is listed separately as Project Manager / Gerente de Proyecto with +1 (956) 588-8227 and an intentionally blank photo area. This is also the current company contact number. The new page uses the same language control, menu, hero/scroll effects and direct Web3Forms inquiry flow as the other pages.
 
 The company-supplied Google Maps pin is stored in `project.mapsURL` and appears on prominent directions links throughout the site, including the Home location/contact sections, event, lot page, Invest, Careers and Sales Team. The calendar also includes the same directions URL. The pin identifies the land, not a company office. The mobile menu has nine links and switches to desktop at1200px.
+
+## Additional project plan
+
+Available Lots displays the original `assets/images/land.jpg` in a dedicated `#site-plan` section before the inventory. Visitors can reach it from the hero, open the full-size image, or download the unchanged JPEG. Printed dimensions in this drawing may differ from the November 2026 inventory used for the cards; both sources remain accessible and are labeled separately.

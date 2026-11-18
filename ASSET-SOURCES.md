@@ -113,3 +113,7 @@ Submitting a form transmits the visitor's name, email, optional phone, message, 
 Vanessa supplied Bernardo Diaz's role as Project Manager and phone +1 (956) 588-8227, also requested as the replacement company contact. No portrait was supplied; his photo area is intentionally blank. Allen Lozano, Francisco “Frank” Velasco and Yahir Galvan retain their supplied names, roles, phone numbers and previously enhanced portraits. All profiles moved to the dedicated bilingual Sales Team page, with the supplied project-participant credits preserved.
 
 The project directions use Vanessa's exact supplied pin: https://maps.app.goo.gl/81aUoBMNfsy8Tv879?g_st=it . No office location or new project address is inferred from this link. The Sales Team hero reuses the existing illustrative sunset-city asset and its established provenance; it does not claim to show Puerta del Sol.
+
+## Additional supplied annotated plan — November 19, 2026
+
+Vanessa uploaded `assets/images/land.jpg` directly to the repository in commit ff95185. The original 1280 × 1118 JPEG is displayed unchanged on Available Lots, with full-size and download links. No generative recreation, retouching, resampling or transcription of its dimensions was used. The original November2026 PDF and its inventory facts are retained; the page distinguishes that source from this additional supplied drawing.
