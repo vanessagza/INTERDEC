@@ -12,7 +12,7 @@
   const copy = {
     en: {
       residential: { heading: 'Places to put down roots.', caption: 'Planned residential lots' },
-      commercial: { heading: 'Space for your next venture.', caption: 'Planned commercial lots' },
+      commercial: { heading: 'Commercial lots sold.', caption: 'Commercial lots' },
       size: '[Details coming soon]', price: '[To be announced]',
       email: '[Add company email]', phone: '[Add company phone]',
       calendar: 'Calendar invitation downloaded.',
@@ -20,7 +20,7 @@
     },
     es: {
       residential: { heading: 'Un lugar para echar raíces.', caption: 'Lotes residenciales planeados' },
-      commercial: { heading: 'Espacio para tu próximo negocio.', caption: 'Lotes comerciales planeados' },
+      commercial: { heading: 'Lotes comerciales vendidos.', caption: 'Lotes comerciales' },
       size: '[Información próximamente]', price: '[Por anunciar]',
       email: '[Agrega el correo de la empresa]', phone: '[Agrega el teléfono de la empresa]',
       calendar: 'Invitación de calendario descargada.',

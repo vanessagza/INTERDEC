@@ -30,8 +30,8 @@ window.INTERDEC = {
     commercialSizeEs: '11,702–16,796 pies² · según el lote',
     residentialPrice: 'Launch cash price from $55,000 USD · first 10 cash lots',
     residentialPriceEs: 'Precio inicial de contado desde $55,000 USD · primeros 10 lotes de contado',
-    commercialPrice: 'Contact the sales team for pricing',
-    commercialPriceEs: 'Consulta precios con el equipo de ventas',
+    commercialPrice: 'All 3 commercial lots are sold',
+    commercialPriceEs: 'Los 3 lotes comerciales están vendidos',
     // This number is printed on the supplied invitation. It is NOT verified as the company number.
     inquiryPhone: '+19564561788',
     inquiryPhoneDisplay: '(956) 456-1788',

@@ -115,7 +115,7 @@ Every page uses the same nine-link mobile menu, starting with Home/Inicio. The c
 
 Home includes a dedicated `#downloads` section for saving or opening the unchanged original8-page Puerta del Sol PDF, linked from the project summary and footer. The expanded location section presents the package's address, schools, I-2/US83 access, all nine stores listed within1.4miles, and a labeled AI-enhanced retail illustration with a link to its source.
 
-All52 inventory cards show supplied dimensions/areas directly; detail dialogs preserve source differences. Lots18–26 are reserved, leaving40 residential plus3 commercial available. Six lots have area only in the package, so no linear dimensions are invented. The full inventory is shown by default, making reserved lots visible immediately; filters can narrow to available or reserved. Compact cards use 14px supporting text and 2–6 columns depending on available width.
+All52 inventory cards show supplied dimensions/areas directly; detail dialogs preserve source differences. Lots 18–26 are reserved. As updated November 19, 2026, 40 residential lots are available and all three commercial lots (50–52) are sold. Six lots have area only in the package, so no linear dimensions are invented. The full inventory is shown by default, making reserved lots visible immediately; filters can narrow to available or reserved. Compact cards use 14px supporting text and 2–6 columns depending on available width.
 
 ## Consistent page effects
 
@@ -130,3 +130,7 @@ The company-supplied Google Maps pin is stored in `project.mapsURL` and appears 
 ## Additional project plan
 
 Available Lots displays the original `assets/images/land.jpg` in a dedicated `#site-plan` section before the inventory. Visitors can reach it from the hero, open the full-size image, or download the unchanged JPEG. Printed dimensions in this drawing may differ from the November 2026 inventory used for the cards; both sources remain accessible and are labeled separately.
+
+## Inventory status update — November 19, 2026
+
+The language switch displays ENG/ESP on all five pages while the document language codes remain `en`/`es`. Commercial lots 50, 51 and 52 are marked Sold/Vendido at the company's request. The full list remains52 lots:40 available residential,9 reserved residential and3 sold commercial. The Sold filter, details and Home commercial panel reflect this update. The original November2026 PDF remains an unchanged historical source for measurements and package terms.

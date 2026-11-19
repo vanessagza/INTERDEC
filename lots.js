@@ -1,4 +1,4 @@
-/* Puerta del Sol inventory, transcribed from the November 2026 package.
+/* Puerta del Sol measurements from the November 2026 package; commercial status updated November 19, 2026.
    The page is a dated inventory reference, not a reservation or live inventory system. */
 (() => {
   'use strict';
@@ -27,7 +27,7 @@
   const text = (en, es) => language() === 'es' ? es : en;
   const number = value => new Intl.NumberFormat(language() === 'es' ? 'es-MX' : 'en-US').format(value);
   const typeLabel = lot => lot.type === 'residential' ? text('Residential', 'Residencial') : text('Commercial', 'Comercial');
-  const statusLabel = lot => lot.status === 'available' ? text('Available', 'Disponible') : text('Reserved', 'Apartado');
+  const statusLabel = lot => lot.status === 'sold' ? text('Sold', 'Vendido') : lot.status === 'reserved' ? text('Reserved', 'Apartado') : text('Available', 'Disponible');
   const dimensionsLabel = lot => lot.width && lot.depth
     ? text(`${lot.width}′ × ${lot.depth}′`, `${lot.width} × ${lot.depth} pies`)
     : text('Width and depth are not listed in the package.', 'El paquete no indica medidas de frente y fondo.');
@@ -42,7 +42,7 @@
         && (status.value === 'all' || status.value === lot.status)
         && (!term || requestedNumber === lot.number);
       lot.card.closest('.lots-item').hidden = !visible;
-      lot.card.setAttribute('aria-label', text(`Lot ${String(lot.number)}, ${typeLabel(lot)}, ${statusLabel(lot)} in the November 2026 package. ${dimensionsLabel(lot)} · ${areaLabel(lot)}. View details.`, `Lote ${String(lot.number)}, ${typeLabel(lot)}, ${statusLabel(lot)} en el paquete de noviembre de 2026. ${dimensionsLabel(lot)} · ${areaLabel(lot)}. Ver detalles.`));
+      lot.card.setAttribute('aria-label', text(`Lot ${String(lot.number)}, ${typeLabel(lot)}, ${statusLabel(lot)}. ${dimensionsLabel(lot)} · ${areaLabel(lot)}. View details.`, `Lote ${String(lot.number)}, ${typeLabel(lot)}, ${statusLabel(lot)}. ${dimensionsLabel(lot)} · ${areaLabel(lot)}. Ver detalles.`));
       if (visible) count++;
     });
     results.textContent = text(`${count} of 52 lots`, `${count} lotes de 52`);
@@ -53,7 +53,7 @@
     selectedLot = lot;
     document.querySelector('#lot-dialog-title').textContent = text('Lot ', 'Lote ') + String(lot.number);
     const label = document.querySelector('#detail-status');
-    label.textContent = `${statusLabel(lot)} · ${text('November 2026', 'Noviembre de 2026')}`;
+    label.textContent = `${statusLabel(lot)} · ${lot.status === 'sold' ? text('November 19, 2026', '19 de noviembre de 2026') : text('November 2026', 'Noviembre de 2026')}`;
     label.className = `lot-status ${lot.status}`;
     document.querySelector('#detail-type').textContent = typeLabel(lot);
     document.querySelector('#detail-dimensions').textContent = dimensionsLabel(lot);
@@ -61,9 +61,10 @@
     document.querySelector('#detail-plan-row').hidden = !lot.planArea;
     document.querySelector('#detail-plan-size').textContent = lot.planArea ? `${number(lot.planArea)} ${text('sq ft', 'pies²')}` : '';
     document.querySelector('#detail-price').textContent = lot.type === 'commercial'
-      ? text('Contact the project team for commercial pricing.', 'Consulta los precios comerciales con el equipo del proyecto.')
+      ? text('Sold. Contact the team about other lot opportunities.', 'Vendido. Consulta con el equipo sobre otras oportunidades de lotes.')
       : text('Package launch prices: $55,000 cash / $57,000 financed. First-10-lot terms apply; confirm current pricing.', 'Precios de lanzamiento del paquete: $55,000 al contado / $57,000 financiado. Aplican condiciones de los primeros 10 lotes; confirma el precio actual.');
     document.querySelector('#lot-detail-note').textContent = text('Source: November 2026 lot package, inventory page 5 and proposed plan page 4. Where the plan lists a different area, both supplied figures are shown. Confirm current availability, final recorded measurements, and purchase terms with the project team.', 'Fuente: paquete de lotes de noviembre de 2026, inventario de la página 5 y plano propuesto de la página 4. Cuando el plano indica una superficie distinta, se muestran ambos datos publicados. Confirma disponibilidad actual, medidas finales registradas y condiciones de compra con el equipo del proyecto.');
+    if (lot.status === 'sold') document.querySelector('#lot-detail-note').textContent += text(' Commercial status updated by the company on November 19, 2026.', ' Estatus comercial actualizado por la empresa el 19 de noviembre de 2026.');
     const inquiryURL = new URL('index.html', location.href);
     inquiryURL.searchParams.set('lot', String(lot.number));
     inquiryURL.hash = 'contact';

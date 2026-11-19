@@ -117,3 +117,7 @@ The project directions use Vanessa's exact supplied pin: https://maps.app.goo.gl
 ## Additional supplied annotated plan — November 19, 2026
 
 Vanessa uploaded `assets/images/land.jpg` directly to the repository in commit ff95185. The original 1280 × 1118 JPEG is displayed unchanged on Available Lots, with full-size and download links. No generative recreation, retouching, resampling or transcription of its dimensions was used. The original November2026 PDF and its inventory facts are retained; the page distinguishes that source from this additional supplied drawing.
+
+## Company status update — November 19, 2026
+
+Vanessa instructed that commercial lots50–52 be marked Sold. This company update supersedes the available status printed in the original November2026 package; the PDF and source images remain unchanged. Residential lots18–26 stay reserved and the other40 residential lots stay available. The inventory UI labels sold status with the update date rather than attributing it to the PDF.

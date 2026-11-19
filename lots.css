@@ -116,3 +116,6 @@
 .lots-plan-actions { gap: 18px 24px; }
 .lots-plan-actions .text-link { color: var(--navy); }
 @media (max-width: 700px) { .lots-plan-image--detailed { padding: 8px; } .lots-plan-actions > .button { width: 100%; } }
+
+.lot-status.sold { color: #803d34; border-color: #d5ada6; background: #fbefed; }
+.lot-card[data-kind="commercial"] .lot-status.sold { color: #f5c8c1; border-color: #a46d65; background: #ffffff08; }

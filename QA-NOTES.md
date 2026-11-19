@@ -130,3 +130,9 @@ Resolved the pending image item: Vanessa uploaded `assets/images/land.jpg` in co
 Passed EN/ES browser checks at 320, 390, 768 and 1440px: image HTTP200 and natural dimensions, correct uncropped aspect ratio, full-size new tab, accessible localized link label, correct download filename and original bytes, no page overflow, correct section order and hero anchor. Menu and inventory smoke checks pass with 52 lots and lots18–26 reserved. Removed unsupported Unicode arrow glyphs in the new section in favor of an SVG/plain label. Static links/assets/anchors/IDs and diff checks pass.
 
 The downloaded and displayed source matches the user-uploaded file byte for byte: SHA256 a17685992be8f9bd7e5bf5107ca29155c1435520b515fb0cb76faea186711b1e. This image request is now complete.
+
+## Language labels and commercial sales — November 19, 2026
+
+Changed the visible language selector to ENG/ESP across all five pages; standard document language codes remain en/es. Marked commercial lots50,51,52 Sold/Vendido per the company update, added a Sold filter, updated the commercial summary and Home tab, and gave sold detail/status/ARIA text the correct current attribution. Original package/PDF facts remain unchanged. Current totals:52 lots,40 available residential,9 reserved residential,3 sold commercial.
+
+Passed40 browser page/language/width combinations (fivepages × EN/ES ×320/390/1200/1440): correct switchlabels, headerfit and no horizontal overflow. Available filter returns40; commercial+available returns0; sold returns3 with all three Sold/Vendido detail dialogs and update dates; reserved returns9; all returns52. Home commercial panel reflects sold status. No JavaScript errors. Syntax and diff checks pass.
